@@ -48,8 +48,17 @@
 
 	$: sum = numbers.reduce((total, currentNumber) => total + currentNumber, 0); */
 
-	// PROPS -------------------------------------------------------------------------------------
+	// PROPS script ---------------------------------------------------------------------------------
+	/* import Practice from './practicePage.svelte'; */
+
 	import Practice from './practicePage.svelte';
+
+	const pkg = {
+		name: 'svelte',
+		speed: 'blazing',
+		version: 4,
+		website: 'https://svelte.dev'
+	};
 </script>
 
 <!-- Introduction html ------------------------------------------------------->
@@ -83,9 +92,13 @@
 
 <button on:click={addNumber}>Add a number</button> -->
 
-<!-- PROPS ----------------------------------------------------------------------------------------->
-<Practice answer={42} />
-<Practice />
+<!-- PROPS HTML ------------------------------------------------------------------------------------->
+<!-- <Practice answer={42} />
+<Practice /> -->
+
+<!-- <Practice name={pkg.name} speed={pkg.speed} version={pkg.version} website={pkg.website} /> -->
+
+<Practice {...pkg} />
 
 <style>
 	/* introduction CSS ---------------------------------------------------- */
