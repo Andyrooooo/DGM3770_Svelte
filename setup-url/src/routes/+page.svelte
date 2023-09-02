@@ -19,7 +19,7 @@
 		count += 1;
 	} */
 
-	let counter = 0;
+	/* let counter = 0;
 
 	$: {
 		console.log(`the count is ${counter}`);
@@ -33,7 +33,20 @@
 	$: if (counter >= 10) {
 		alert('Whoa! thats way too high');
 		counter = 0;
+	} */
+
+	let numbers = [1, 2, 3, 4];
+
+	function addNumber() {
+		// numbers.push(numbers.length + 1);
+		// numbers = numbers;
+
+		// numbers = [...numbers, numbers.length + 1];
+
+		numbers[numbers.length] = numbers.length + 1;
 	}
+
+	$: sum = numbers.reduce((total, currentNumber) => total + currentNumber, 0);
 </script>
 
 <!-- Introduction html ------------------------------------------------------->
@@ -56,10 +69,16 @@
 
 <p>{count} doubled is {doubled}</p> -->
 
-<button on:click={handleClick}>
+<!-- <button on:click={handleClick}>
 	Clicked {counter}
 	{counter === 1 ? 'time' : 'times'}
-</button>
+</button> -->
+
+<!-- We are at "part1/reactivity/updating arrays and objects" on the svelte site tutorial -->
+
+<p>{numbers.join(' + ')} = {sum}</p>
+
+<button on:click={addNumber}>Add a number</button>
 
 <style>
 	/* introduction CSS ---------------------------------------------------- */
