@@ -3,7 +3,7 @@
 	let name = 'Svelte';
 	let src = 'https://i.pinimg.com/originals/7f/e1/a3/7fe1a3c59fad552cd5346451cbf51e4b.jpg';
 	let doggo = 'doggo';
-	import Practice from './practicePage.svelte';
+	// import Practice from './practicePage.svelte';
 	let string = `Svelte is so <strong>COOOOOLLLL!!!<strong/>`;
 
 	// Reactivity Script ------------------------------------------------------
@@ -35,7 +35,7 @@
 		counter = 0;
 	} */
 
-	let numbers = [1, 2, 3, 4];
+	/* let numbers = [1, 2, 3, 4];
 
 	function addNumber() {
 		// numbers.push(numbers.length + 1);
@@ -46,14 +46,17 @@
 		numbers[numbers.length] = numbers.length + 1;
 	}
 
-	$: sum = numbers.reduce((total, currentNumber) => total + currentNumber, 0);
+	$: sum = numbers.reduce((total, currentNumber) => total + currentNumber, 0); */
+
+	// PROPS -------------------------------------------------------------------------------------
+	import Practice from './practicePage.svelte';
 </script>
 
 <!-- Introduction html ------------------------------------------------------->
 <h1>Hello {name}</h1>
 <img {src} alt="A cute {doggo}" />
 <p class="firstParagraph">This is a paragraph</p>
-<Practice />
+<!-- <Practice /> -->
 <p>{@html string}</p>
 
 <!-- Reactivity html --------------------------------------------------------->
@@ -76,9 +79,12 @@
 
 <!-- We are at "part1/reactivity/updating arrays and objects" on the svelte site tutorial -->
 
-<p>{numbers.join(' + ')} = {sum}</p>
+<!-- <p>{numbers.join(' + ')} = {sum}</p>
 
-<button on:click={addNumber}>Add a number</button>
+<button on:click={addNumber}>Add a number</button> -->
+
+<!-- PROPS ----------------------------------------------------------------------------------------->
+<Practice answer={35} />
 
 <style>
 	/* introduction CSS ---------------------------------------------------- */
