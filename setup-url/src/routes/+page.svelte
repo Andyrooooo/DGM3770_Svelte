@@ -4,18 +4,22 @@
 	let doggo = 'doggo';
 
 	import Practice from './practicePage.svelte';
+
+	let string = `Svelte is so <strong>COOOOOLLLL!!!<strong/>`;
 </script>
 
 <h1>Hello {name}</h1>
 
 <img {src} alt="A cute {doggo}" />
 
-<p>This is a paragraph</p>
+<p class="firstParagraph">This is a paragraph</p>
 
 <Practice />
 
+<p>{@html string}</p>
+
 <style>
-	p {
+	p.firstParagraph {
 		color: goldenrod;
 		font-family: 'Comic Sans MS', cursive;
 		font-size: 2em;
