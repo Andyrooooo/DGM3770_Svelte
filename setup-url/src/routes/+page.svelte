@@ -12,11 +12,27 @@
 		count += 1;
 	} */
 
-	let count = 0;
+	/* let count = 0;
 	$: doubled = count * 2;
 
 	function increment() {
 		count += 1;
+	} */
+
+	let counter = 0;
+
+	$: {
+		console.log(`the count is ${counter}`);
+		console.log(`I will also show up every time MUAHAHAH`);
+	}
+
+	function handleClick() {
+		counter += 1;
+	}
+
+	$: if (counter >= 10) {
+		alert('Whoa! thats way too high');
+		counter = 0;
 	}
 </script>
 
@@ -33,12 +49,17 @@
 	{count === 1 ? 'time' : 'times'}
 </button> -->
 
-<button on:click={increment}>
+<!-- <button on:click={increment}>
 	Clicked {count}
 	{count === 1 ? 'time' : 'times'}
 </button>
 
-<p>{count} doubled is {doubled}</p>
+<p>{count} doubled is {doubled}</p> -->
+
+<button on:click={handleClick}>
+	Clicked {counter}
+	{counter === 1 ? 'time' : 'times'}
+</button>
 
 <style>
 	/* introduction CSS ---------------------------------------------------- */
