@@ -73,8 +73,22 @@
 		count += 1;
 	} */
 
-	const colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
-	let selected = colors[0];
+	/* const colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
+	let selected = colors[0]; */
+
+	import Practice from './practicePage.svelte';
+
+	let things = [
+		{ id: 1, name: 'apple' },
+		{ id: 2, name: 'banana' },
+		{ id: 3, name: 'carrot' },
+		{ id: 4, name: 'doughnut' },
+		{ id: 5, name: 'egg' }
+	];
+
+	function handleClick() {
+		things = things.slice(1);
+	}
 </script>
 
 <!-- Introduction html ------------------------------------------------------------------------------>
@@ -145,15 +159,24 @@
 	<p>{count} is between 0 and 10</p>
 {/if} -->
 
-<h1 style="color: {selected}">Pick a color</h1>
+<!-- <h1 style="color: {selected}">Pick a color</h1>
 
 <div>
 	{#each colors as color, i}
-		<button aria-current={selected === color} aria-label={color} on:click={() => (selected = color)}
-			>{i + 1}</button
+		<button
+			aria-current={selected === color}
+			aria-label={color}
+			style="background:{color}"
+			on:click={() => (selected = color)}>{i + 1}</button
 		>
 	{/each}
-</div>
+</div> -->
+
+<button on:click={handleClick}> Remove first thing </button>
+
+{#each things as thing (thing.id)}
+	<Practice name={thing.name} />
+{/each}
 
 <style>
 	/* introduction CSS ---------------------------------------------------- */
@@ -164,7 +187,7 @@
 	} */
 
 	/* LOGIC CSS --------------------------------------------------------------------------------- */
-	h1 {
+	/* h1 {
 		transition: color 0.2s;
 	}
 
@@ -188,5 +211,5 @@
 		transform: none;
 		filter: none;
 		box-shadow: inset 3px 3px 4px rgba(0, 0, 0, 0.2);
-	}
+	} */
 </style>
