@@ -1,10 +1,10 @@
 <script>
 	// Introduction script----------------------------------------------------
-	let name = 'Svelte';
-	let src = 'https://i.pinimg.com/originals/7f/e1/a3/7fe1a3c59fad552cd5346451cbf51e4b.jpg';
-	let doggo = 'doggo';
+	// let name = 'Svelte';
+	// let src = 'https://i.pinimg.com/originals/7f/e1/a3/7fe1a3c59fad552cd5346451cbf51e4b.jpg';
+	// let doggo = 'doggo';
 	// import Practice from './practicePage.svelte';
-	let string = `Svelte is so <strong>COOOOOLLLL!!!<strong/>`;
+	// let string = `Svelte is so <strong>COOOOOLLLL!!!<strong/>`;
 
 	// Reactivity Script ------------------------------------------------------
 	/* let count = 0;
@@ -51,24 +51,31 @@
 	// PROPS script ---------------------------------------------------------------------------------
 	/* import Practice from './practicePage.svelte'; */
 
-	import Practice from './practicePage.svelte';
+	// import Practice from './practicePage.svelte';
 
-	const pkg = {
-		name: 'svelte',
-		speed: 'blazing',
-		version: 4,
-		website: 'https://svelte.dev'
-	};
+	// const pkg = {
+	// 	name: 'svelte',
+	// 	speed: 'blazing',
+	// 	version: 4,
+	// 	website: 'https://svelte.dev'
+	// };
+
+	/* LOGIC SCRIPtS ------------------------------------------------------------------------------ */
+	let count = 0;
+
+	function increment() {
+		count += 1;
+	}
 </script>
 
-<!-- Introduction html ------------------------------------------------------->
-<h1>Hello {name}</h1>
+<!-- Introduction html ------------------------------------------------------------------------------>
+<!-- <h1>Hello {name}</h1>
 <img {src} alt="A cute {doggo}" />
-<p class="firstParagraph">This is a paragraph</p>
+<p class="firstParagraph">This is a paragraph</p> -->
 <!-- <Practice /> -->
-<p>{@html string}</p>
+<!-- <p>{@html string}</p> -->
 
-<!-- Reactivity html --------------------------------------------------------->
+<!-- Reactivity html -------------------------------------------------------------------------------->
 <!-- <button on:click={increment}>
 	Clicked {count}
 	{count === 1 ? 'time' : 'times'}
@@ -98,13 +105,23 @@
 
 <!-- <Practice name={pkg.name} speed={pkg.speed} version={pkg.version} website={pkg.website} /> -->
 
-<Practice {...pkg} />
+<!-- <Practice {...pkg} /> -->
+
+<!-- LOGIC HTML ------------------------------------------------------------------------------------>
+<button on:click={increment}>
+	Clicked {count}
+	{count === 1 ? 'time' : 'times'}
+</button>
+
+{#if count > 10}
+	<p>{count} is greater than 10</p>
+{/if}
 
 <style>
 	/* introduction CSS ---------------------------------------------------- */
-	p.firstParagraph {
+	/* p.firstParagraph {
 		color: red;
 		font-family: 'Comic Sans MS', cursive;
 		font-size: 2em;
-	}
+	} */
 </style>
