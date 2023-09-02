@@ -1,5 +1,9 @@
 <script>
 	let name = 'Svelte';
+	let src = 'https://i.pinimg.com/originals/7f/e1/a3/7fe1a3c59fad552cd5346451cbf51e4b.jpg';
+	let doggo = 'doggo';
 </script>
 
-<h1>Hello {name.toUpperCase()}!</h1>
+<h1>Hello {name}</h1>
+
+<img {src} alt="A cute {doggo}" />
