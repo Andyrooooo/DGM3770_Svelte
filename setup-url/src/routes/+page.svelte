@@ -7,3 +7,13 @@
 <h1>Hello {name}</h1>
 
 <img {src} alt="A cute {doggo}" />
+
+<p>This is a paragraph</p>
+
+<style>
+	p {
+		color: goldenrod;
+		font-family: 'Comic Sans MS', cursive;
+		font-size: 2em;
+	}
+</style>
