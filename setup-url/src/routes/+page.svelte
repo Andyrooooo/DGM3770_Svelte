@@ -76,7 +76,7 @@
 	/* const colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
 	let selected = colors[0]; */
 
-	import Practice from './practicePage.svelte';
+	/* import Practice from './practicePage.svelte';
 
 	let things = [
 		{ id: 1, name: 'apple' },
@@ -88,6 +88,14 @@
 
 	function handleClick() {
 		things = things.slice(1);
+	} */
+
+	import { getRandomNumber } from './utils.js';
+
+	let promise = getRandomNumber();
+
+	function handleClick() {
+		promise = getRandomNumber();
 	}
 </script>
 
@@ -172,11 +180,21 @@
 	{/each}
 </div> -->
 
-<button on:click={handleClick}> Remove first thing </button>
+<!-- <button on:click={handleClick}> Remove first thing </button>
 
 {#each things as thing (thing.id)}
 	<Practice name={thing.name} />
-{/each}
+{/each} -->
+
+<button on:click={handleClick}> generate random number</button>
+
+{#await promise}
+	<p>...waiting</p>
+{:then number}
+	<p>The number is {number}</p>
+{:catch error}
+	<p style="color: red">{error.message}</p>
+{/await}
 
 <style>
 	/* introduction CSS ---------------------------------------------------- */

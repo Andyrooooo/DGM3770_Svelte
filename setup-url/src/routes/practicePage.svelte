@@ -10,17 +10,17 @@
 	$: href = `https://www.npmjs.com/package/${name}`; */
 
 	/* Logic scripts ------------------------------------------------------------------------------ */
-	const emojis = {
-		apple: '🍎',
-		banana: '🍌',
-		carrot: '🥕',
-		doughnut: '🍩',
-		egg: '🥚'
-	};
+	// const emojis = {
+	// 	apple: '🍎',
+	// 	banana: '🍌',
+	// 	carrot: '🥕',
+	// 	doughnut: '🍩',
+	// 	egg: '🥚'
+	// };
 
-	export let name;
+	// export let name;
 
-	const emoji = emojis[name];
+	// const emoji = emojis[name];
 </script>
 
 <!-- Introduction html ------------------------------------------------------------------------------>
@@ -35,4 +35,4 @@
 </p> -->
 
 <!-- Logic HTML ------------------------------------------------------------------------------------>
-<p>{emoji} = {name}</p>
+<!-- <p>{emoji} = {name}</p> -->
