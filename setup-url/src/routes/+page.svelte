@@ -84,7 +84,8 @@
 <button on:click={addNumber}>Add a number</button> -->
 
 <!-- PROPS ----------------------------------------------------------------------------------------->
-<Practice answer={35} />
+<Practice answer={42} />
+<Practice />
 
 <style>
 	/* introduction CSS ---------------------------------------------------- */
