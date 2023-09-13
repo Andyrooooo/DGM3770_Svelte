@@ -5,7 +5,7 @@
 
 	import Secondpage from './secondPage.svelte';
 
-	let string = 'In '; // im right hereeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+	let string = `Here is a link to my <a href="https://github.com/andyrooooo"><i class="link">GitHub</i></a>`;
 </script>
 
 <h1>Hello World!</h1>
@@ -17,6 +17,8 @@
 
 <p>This is text from the first component</p>
 <Secondpage />
+
+<p>{@html string}</p>
 
 <style>
 	.picture {
