@@ -17,8 +17,14 @@
         event.target.style.display = "none";
     }
 
-    function changeColor(event) {
-        event.target.style.background = "green";
+    let isGreen = ''
+
+    function changeColor() {
+        if (isGreen === '') {
+            isGreen = 'green'
+        } else {
+            isGreen = ''
+        }
     }
 </script>
 
@@ -30,13 +36,9 @@
 	<p>The pointer is at {n.x} x {n.y}</p>
 </div>
 
-<button class="boxThree" on:click={disappear}>
-	<p>Don't Click me</p>
-</button>
+<button class="boxThree" on:click={disappear}>Don't Click Me</button>
 
-<button class="boxFour" on:click={changeColor}>
-	<p>Don't click me either</p>
-</button>
+<button class="boxFour {isGreen}" on:click={changeColor}>Don't click me either</button>
 
 <style>
 	div.boxOne {
@@ -72,14 +74,17 @@
         background: rgb(71, 71, 71);
         border-radius: 10px;
 	}
-    button.boxFour{
+    button.boxFour {
 		position: fixed;
 		left: 75.5%;
 		top: 1%;
 		width: 23.5%;
 		height: 23.5%;
 		padding: 1rem;
-        background: rgb(71, 71, 71);
         border-radius: 10px;
+        border: 1px solid black;
 	}
+    .green {
+        background-color: green;
+    }
 </style>
