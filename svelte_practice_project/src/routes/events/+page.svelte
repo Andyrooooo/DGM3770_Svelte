@@ -4,6 +4,8 @@
     import Inline from './inlineHandlers.svelte'
 
     import Modifiers from './eventModifiers.svelte'
+
+    import Componente from './ComponentEvents.svelte'
 </script>
 
 <Dom />
@@ -12,6 +14,7 @@
 
 <Modifiers />
 
+<Componente />
 
 <style>
 	
