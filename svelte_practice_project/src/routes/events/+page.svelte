@@ -6,6 +6,8 @@
     import Modifiers from './eventModifiers.svelte'
 
     import Componente from './ComponentEvents.svelte'
+
+    import Forwarding from './eventForwarding.svelte'
 </script>
 
 <Dom />
@@ -16,6 +18,7 @@
 
 <Componente />
 
+<Forwarding />
 <style>
 	
 </style>

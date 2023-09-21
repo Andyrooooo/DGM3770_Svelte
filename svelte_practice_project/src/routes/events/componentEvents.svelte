@@ -22,7 +22,7 @@
         padding: 1rem;
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between
+        justify-content: space-around;
     }
     .component h2 {
         color: black;
