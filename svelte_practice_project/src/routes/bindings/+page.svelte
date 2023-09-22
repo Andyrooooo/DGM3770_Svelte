@@ -6,6 +6,8 @@
     import CInputs from './checkInputs.svelte'
 
     import SBindings from './selectBindings.svelte'
+
+    import GrpInputs from './groupInputs.svelte'
 </script>
 
 <TInputs />
@@ -15,6 +17,8 @@
 <CInputs />
 
 <SBindings />
+
+<GrpInputs />
 
 <style>
 
