@@ -53,7 +53,9 @@
         <button disabled={!answer} type="submit">
             Submit
         </button>
+
     </form>
+    <p class="reminder">Remember this little questionnaire uses the cool way to use <a class="reference">e.preventDefault</a> with <a class="reference">on:submit|preventDefault=(handlerfunction)</a> for reference</p>
 
 </div>
 
@@ -92,6 +94,18 @@
         border-radius: 2px;
         margin: 1rem 37.5%;
         width: 25%;
+    }
+    .reminder {
+        background: red;
+        flex-basis: 100%;
+        padding: 10px;
+        border-radius: 5px;
+    }
+    .reference {
+        background: rgb(223, 223, 223);
+        border-radius: 3px;
+        padding: 0 3px;
+        color: rgb(78, 78, 78);
     }
     /*
     p, button, label {
