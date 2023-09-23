@@ -5,6 +5,7 @@
 	import Logic from './logic/+page.svelte'	
 	import Events from './events/+page.svelte'
 	import Bindings from './bindings/+page.svelte'
+	import Form from './formComponents/+page.svelte'
 
 	let showIntroduction = false
 	let showReactivity = false
@@ -12,11 +13,16 @@
 	let showLogic = false
 	let showEvents = false
 	let showBindings = false
-	
+	let showForm = false
+
 </script>
 
+<div class="introductionHeader">
+	<h1 class="name">Andrew Kester</h1>
+	<h1 class="title">Svelte Tutorial - DGM 3770 </h1>
+</div>
+
 <div class="introductionPage">
-	<h1>Andrew's Svelte Tutorial - DGM 3770 </h1>
 
 	<div class="sectionButtons" class:moduleActive={showIntroduction || showReactivity || showProps || showLogic || showEvents || showBindings}>
 		<button on:click={() => showIntroduction = !showIntroduction} class:active={showIntroduction}>Introduction</button>
@@ -25,6 +31,7 @@
 		<button on:click={() => showLogic = !showLogic} class:active={showLogic}>Logic</button>
 		<button on:click={() => showEvents = !showEvents} class:active={showEvents}>Events</button>
 		<button on:click={() => showBindings = !showBindings} class:active={showBindings}>Bindings</button>
+		<button on:click={() => showForm = !showForm} class:active={showForm}>Forms</button>
 	</div>
 
 	<div>
@@ -46,34 +53,47 @@
 		{#if showBindings}
 			<Bindings />
 		{/if}
+		{#if showForm}
+			<Form />
+		{/if}
 	</div>
 </div>
 
 <style>
-	/* .link {
-		color: red;
-	} */
+	.name {
+		color: rgb(79, 79, 79);
+		float: left;
+	}
+	.title {
+		text-align: center;
+		float: right;
+		color: rgb(79, 79, 79);
+	}
 	.introductionPage {
 		padding: 1rem;
 	}
-	h1 {
-		text-align: center;
-		margin-bottom: 1rem;
+	.introductionHeader {
+		background: rgb(199, 199, 241);
+		padding: 1rem;
+		display: inline-block;
+		width: 100%;
 	}
+	
 	button {
-		border: 1px solid white;
+		border: 1px solid rgb(176, 176, 221);
 		padding: 5px 10px;
 		border-radius: 5px 10px;
 		font-weight: 700;
 		margin: .5rem 0;
+		color: rgb(176, 176, 221);
 	}
 	button:hover {
-		border: 1px solid red;
-		color: red;
+		border: 1px solid rgb(255, 255, 255);
+		color: rgb(255, 255, 255);
 	}
 	.active {
-		background: white;
-		color: black;
+		background: rgb(176, 176, 221);
+		color: rgb(79, 79, 79);
 		border: none;
 	}
 	.sectionButtons {
