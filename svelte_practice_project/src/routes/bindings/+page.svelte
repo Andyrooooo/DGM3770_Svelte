@@ -8,6 +8,8 @@
     import SBindings from './selectBindings.svelte'
 
     import GrpInputs from './groupInputs.svelte'
+
+    import SelectMultiple from './selectMultiple.svelte'
 </script>
 
 <TInputs />
@@ -19,6 +21,8 @@
 <SBindings />
 
 <GrpInputs />
+
+<SelectMultiple />
 
 <style>
 

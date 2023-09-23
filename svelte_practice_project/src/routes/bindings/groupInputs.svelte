@@ -16,7 +16,7 @@
 			type="radio"
 			name="scoops"
 			value={number}
-            
+            bind:group={scoops}
 		/>
 
 		{number} {number === 1 ? 'scoop' : 'scoops'}
@@ -31,7 +31,7 @@
 			type="checkbox"
 			name="flavours"
 			value={flavour}
-            
+            bind:group={flavours}
 		/>
 
 		{flavour}
