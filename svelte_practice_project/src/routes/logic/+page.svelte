@@ -14,27 +14,36 @@
 	}
 </script>
 
-<If />
-<Color />
-<Emoji />
+<div class="logic">
+	<If />
+	<Color />
+	<Emoji />
 
-<button on:click={handleClick} class="button">Generate random number</button>
+	<button on:click={handleClick} class="button">Generate random number</button>
 
-{#await promise}
-	<p>...waiting</p>
-{:then number}
-	<p>The number is {number}</p>
-{:catch error}
-	<p style="color: red">{error.message}</p>
-{/await}
+	{#await promise}
+		<p>...waiting</p>
+	{:then number}
+		<p>The number is {number}</p>
+	{:catch error}
+		<p style="color: red">{error.message}</p>
+	{/await}
+</div>
 
 <style>
 	.button {
-		background: white;
+		background: black;
 		width: 250px;
 		padding: 1rem 0;
 		border-radius: 10px;
-		color: black;
+		color: white;
 		font-weight: 700;
+	}
+	.logic {
+		margin: 2rem 0;
+		background: white;
+		padding: 1rem;
+		border-radius: 10px;
+		color: black;
 	}
 </style>

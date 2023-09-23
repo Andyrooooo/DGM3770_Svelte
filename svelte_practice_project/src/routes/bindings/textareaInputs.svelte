@@ -33,11 +33,14 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        margin-bottom: 1rem;
     }
     h1 {
         flex-basis: 100%;
         font-size: 1.6rem;
-        margin-bottom: 1rem;
+        margin-bottom: 2rem;
     }
 	textarea {
 		resize: none;

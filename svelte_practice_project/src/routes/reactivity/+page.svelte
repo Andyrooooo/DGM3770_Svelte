@@ -11,18 +11,27 @@
 	$: sum = numbers.reduce((total, currentNumber) => total + currentNumber, 0);
 </script>
 
-<Count />
+<div class="reactivity">
+	<Count />
 
-<p>{numbers.join(' + ')} = {sum}</p>
+	<p>{numbers.join(' + ')} = {sum}</p>
 
-<button on:click={addNumber} class="btn">Click here</button>
+	<button on:click={addNumber} class="btn">Click here</button>
+</div>
 
 <style>
 	.btn {
-		background: white;
+		background: black;
 		width: 150px;
 		border-radius: 10px;
-		color: black;
+		color: white;
 		font-weight: 700;
+	}
+	.reactivity {
+		margin: 2rem 0;
+		background: white;
+		padding: 1rem;
+		border-radius: 10px;
+		color: black;
 	}
 </style>

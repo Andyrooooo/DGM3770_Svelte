@@ -31,6 +31,8 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
     }
     h1 {
         color: black;

@@ -52,6 +52,8 @@
         flex-wrap: wrap;
         background-color: white;
         padding: 1rem;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
     }
 	div.boxOne {
 		width: 24%;

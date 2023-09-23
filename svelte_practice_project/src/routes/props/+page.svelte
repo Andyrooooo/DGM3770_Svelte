@@ -11,7 +11,19 @@
 	};
 </script>
 
-<Props answer={2 * 10} />
-<Props />
+<div class="props">
+	<Props answer={2 * 10} />
+	<Props />
 
-<Software {...pkg} />
+	<Software {...pkg} />
+</div>
+
+<style>
+	.props {
+		margin: 2rem 0;
+		background: white;
+		padding: 1rem;
+		border-radius: 10px;
+		color: black;
+	}
+</style>

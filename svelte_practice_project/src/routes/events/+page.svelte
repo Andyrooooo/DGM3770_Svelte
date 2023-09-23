@@ -12,17 +12,14 @@
     import DomE from './domEventForwarding.svelte'
 </script>
 
-<Dom />
-
-<Inline />
-
-<Modifiers />
-
-<Componente />
-
-<Forwarding />
-
-<DomE />
+<div class="events">
+    <Dom />
+    <Inline />
+    <Modifiers />
+    <Componente />
+    <Forwarding />
+    <DomE />
+</div>
 
 <style>
 	

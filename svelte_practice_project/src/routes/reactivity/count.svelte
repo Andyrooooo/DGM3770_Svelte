@@ -37,10 +37,10 @@
 
 <style>
 	.btn {
-		background: white;
+		background: black;
 		width: 150px;
 		border-radius: 10px;
-		color: black;
+		color: white;
 		font-weight: 700;
 	}
 </style>

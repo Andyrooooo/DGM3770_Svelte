@@ -22,11 +22,11 @@
 
 <style>
 	.button {
-		background: white;
+		background: black;
 		width: 200px;
 		padding: 1rem 0;
 		border-radius: 10px;
-		color: black;
+		color: white;
 		font-weight: 700;
 	}
 </style>
