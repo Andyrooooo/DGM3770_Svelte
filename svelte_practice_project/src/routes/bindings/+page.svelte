@@ -10,6 +10,8 @@
     import GrpInputs from './groupInputs.svelte'
 
     import SelectMultiple from './selectMultiple.svelte'
+
+    import TAInputs from './textareaInputs.svelte'
 </script>
 
 <TInputs />
@@ -23,6 +25,8 @@
 <GrpInputs />
 
 <SelectMultiple />
+
+<TAInputs />
 
 <style>
 

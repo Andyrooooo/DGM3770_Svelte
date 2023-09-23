@@ -6,7 +6,7 @@
 </script>
 
 <div class="grpInputs">
-    <h1>Select Bindings</h1>
+    <h1>Group Inputs</h1>
 
     <h2>Size</h2>
 
