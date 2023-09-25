@@ -5,7 +5,7 @@
 
     import Modifiers from './eventModifiers.svelte'
 
-    import Componente from './ComponentEvents.svelte'
+    import Component from './componentevent.svelte'
 
     import Forwarding from './eventForwarding.svelte'
 
@@ -16,7 +16,7 @@
     <Dom />
     <Inline />
     <Modifiers />
-    <Componente />
+    <Component />
     <Forwarding />
     <DomE />
 </div>
