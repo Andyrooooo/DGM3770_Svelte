@@ -47,6 +47,8 @@
         border-bottom: 1px solid rgb(221, 221, 221);
         padding-bottom: 5px;
         margin-bottom: 1rem;
+        text-align: center;
+        text-transform: uppercase;
     }
     input {
         padding-left: 10px;
