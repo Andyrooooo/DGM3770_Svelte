@@ -19,57 +19,69 @@
 
 </script>
 
-<div class="introductionPage">
-	<div class="introductionHeader">
-		<h1 class="title">DGM 3770 - Svelte</h1>
-		<button on:click={() => showLogin = !showLogin} class="signIn">Sign In</button>
+
+
+<div class:loginModalBackground={showLogin}>
+
+	<div class="introductionPage">
+		<div class="introductionHeader">
+			<h1 class="title">DGM 3770 - Svelte</h1>
+			<button on:click={() => showLogin = true} class="signIn">Sign In</button>
+		</div>
+
+		{#if showLogin}
+			<div class:loginModal={showLogin}>
+				<div class="cancelButtonContainer">
+					<button on:click={() => showLogin = false} class="cancel">X</button>
+				</div>
+		
+				<div class="form">
+					<LoginForm />
+				</div>
+			</div>
+		{/if}
+	
+		<div class="sectionButtons" class:moduleActive={showIntroduction || showReactivity || showProps || showLogic || showEvents || showBindings || showSignup}>
+			<button on:click={() => showIntroduction = !showIntroduction} class:active={showIntroduction}>Introduction</button>
+			<button on:click={() => showReactivity = !showReactivity} class:active={showReactivity}>Reactivity</button>
+			<button on:click={() => showProps = !showProps} class:active={showProps}>Props</button>
+			<button on:click={() => showLogic = !showLogic} class:active={showLogic}>Logic</button>
+			<button on:click={() => showEvents = !showEvents} class:active={showEvents}>Events</button>
+			<button on:click={() => showBindings = !showBindings} class:active={showBindings}>Bindings</button>
+			<button on:click={() => showSignup = !showSignup} class:active={showSignup}>Signup Form</button>
+		</div>
+	
+		<div>
+			{#if showIntroduction}
+				<Introduction />
+			{/if}
+			{#if showReactivity}
+				<Reactivity />
+			{/if}
+			{#if showProps}
+				<Props />
+			{/if}
+			{#if showLogic}
+				<Logic />
+			{/if}
+			{#if showEvents}
+				<Events />
+			{/if}
+			{#if showBindings}
+				<Bindings />
+			{/if}
+			{#if showSignup}
+				<SignupForm />
+			{/if}
+		</div>
+	
 	</div>
-
-	{#if showLogin}
-		<LoginForm />
-	{/if}
-
-	<div class="sectionButtons" class:moduleActive={showIntroduction || showReactivity || showProps || showLogic || showEvents || showBindings || showSignup}>
-		<button on:click={() => showIntroduction = !showIntroduction} class:active={showIntroduction}>Introduction</button>
-		<button on:click={() => showReactivity = !showReactivity} class:active={showReactivity}>Reactivity</button>
-		<button on:click={() => showProps = !showProps} class:active={showProps}>Props</button>
-		<button on:click={() => showLogic = !showLogic} class:active={showLogic}>Logic</button>
-		<button on:click={() => showEvents = !showEvents} class:active={showEvents}>Events</button>
-		<button on:click={() => showBindings = !showBindings} class:active={showBindings}>Bindings</button>
-		<button on:click={() => showSignup = !showSignup} class:active={showSignup}>Signup Form</button>
+	
+	
+	<div class="introductionFooter">
+		<h1 class="footer">Andrew Kester</h1>
 	</div>
-
-	<div>
-		{#if showIntroduction}
-			<Introduction />
-		{/if}
-		{#if showReactivity}
-			<Reactivity />
-		{/if}
-		{#if showProps}
-			<Props />
-		{/if}
-		{#if showLogic}
-			<Logic />
-		{/if}
-		{#if showEvents}
-			<Events />
-		{/if}
-		{#if showBindings}
-			<Bindings />
-		{/if}
-		{#if showSignup}
-			<SignupForm />
-		{/if}
-	</div>
-
 </div>
-
-
-<div class="introductionFooter">
-	<h1 class="footer">Andrew Kester</h1>
-</div>
-
 
 
 
@@ -82,6 +94,13 @@
 		text-align: center;
 		float: right;
 		color: rgb(79, 79, 79);
+		border: none;
+		padding: 0;
+		margin: 0;
+	}
+	.signIn:hover {
+		color: white;
+		border: none;
 	}
 	.introductionPage {
 		/* padding: 1rem; */
@@ -118,6 +137,7 @@
 		flex-wrap: wrap;
 		justify-content: space-around;
 		margin: 1rem;
+		gap: 0 .9rem;
 	}
 	.moduleActive {
 		border-bottom: 1px solid rgb(93, 93, 93);
@@ -129,6 +149,40 @@
 		padding: .5rem 0;
 		width: 100%;
 		color: rgb(79, 79, 79);
+	}
+	.loginModal {
+		background: rgba(84, 84, 84, 0.95);
+		z-index: 2;
+		min-height: 100vh;
+		min-width: 100vw;
+		position: absolute;
+	}
+	.loginModalBackground {
+		z-index: 1;
+		position: relative;
+	}
+	.cancel {
+		border: none;
+		text-align: right;
+		border: 1px solid rgb(176, 176, 221);
+		float: right;
+	}
+	.cancel:hover {
+		border: 1px solid rgb(255, 255, 255);
+		color: white;
+	}
+	.cancel:active {
+		border: none;
+	}
+	.cancelButtonContainer {
+		width: 100%;
+		margin-bottom: 4.8rem;
+		padding-right: 1rem;
+		padding-top: 3px;
+	}
+	.form {
+		width: 450px;
+		margin: 0 auto;
 	}
 </style>
 

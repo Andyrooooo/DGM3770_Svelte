@@ -45,5 +45,6 @@
 		padding: 1rem;
 		border-radius: 10px;
 		color: black;
+		box-shadow: 1px 1px 4px 2px rgb(34, 34, 34);
 	}
 </style>

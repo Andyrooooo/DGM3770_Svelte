@@ -34,5 +34,6 @@
 		border-radius: 10px;
 		color: black;
 		margin: 1rem 1rem 2rem 1rem;
+		box-shadow: 1px 1px 4px 2px rgb(34, 34, 34);
 	}
 </style>

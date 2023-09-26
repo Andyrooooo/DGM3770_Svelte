@@ -5,47 +5,50 @@
 <div class="signupForm">
     <h1>Sign up</h1>
 
-    <form class="md:flex justify-between">
-        <div class="basis-1/5">
+    <form class="md:grid gap-4 grid-cols-3 grid-rows-2">
+        <div class="">
             <label for="first-name" class="block text-sm font-medium leading-6 text-gray-900">First name*</label>
             <div class="mt-2">
               <input type="text" name="first-name" id="first-name" autocomplete="given-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="John" required>
             </div>
         </div>
   
-        <div class="basis-1/5">
+        <div class="">
             <label for="last-name" class="block text-sm font-medium leading-6 text-gray-900">Last name*</label>
             <div class="mt-2">
                 <input type="text" name="last-name" id="last-name" autocomplete="family-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="e.g. Smith" required>
             </div>
         </div>
   
-        <div class="basis-1/5">
+        <div class="">
             <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Email address*</label>
             <div class="mt-2">
                 <input id="email" name="email" type="email" autocomplete="email" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="john@doe.com" required>
             </div>
         </div>
 
-        <div class="basis-1/5">
+        <div class="">
             <label for="phone" class="block text-sm font-medium leading-6 text-gray-900">Phone Number</label>
             <div class="mt-2">
                 <input id="phone" name="phone" type="number" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="801-123-4567">
             </div>
         </div>
 
-        <div class="basis-1/5">
+        <div class="">
             <label for="phone" class="block text-sm font-medium leading-6 text-gray-900">Password*</label>
             <div class="mt-2">
                 <input id="phone" name="phone" type="password" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" required>
             </div>
         </div>
 
-        <div class="basis-1/5">
+        <div class="">
             <label for="phone" class="block text-sm font-medium leading-6 text-gray-900">Re-enter Password*</label>
             <div class="mt-2">
                 <input id="phone" name="phone" type="password" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" required>
             </div>
+        </div>
+		<div class="">
+            
         </div>
 
         <div class="container flex flex-col items-center">
@@ -62,6 +65,7 @@
         color: black;
         border-radius: 10px;
 		margin: 1rem 1rem 2rem 1rem;
+		box-shadow: 1px 1px 4px 2px rgb(34, 34, 34);
     }
     h1 {
         border-bottom: 1px solid rgb(221, 221, 221);
@@ -82,6 +86,7 @@
         border-radius: 5px;
         font-weight: 700;
         color: rgb(132, 132, 160);
+		margin-bottom: 1rem;
     }
     .submitButton:hover {
         background: rgb(199, 199, 241);
