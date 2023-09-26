@@ -22,5 +22,7 @@
 </div>
 
 <style>
-	
+	.events {
+        margin: 1rem 1rem 2rem 1rem;
+    }
 </style>

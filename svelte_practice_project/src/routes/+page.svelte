@@ -5,7 +5,8 @@
 	import Logic from './logic/+page.svelte'	
 	import Events from './events/+page.svelte'
 	import Bindings from './bindings/+page.svelte'
-	import Form from './formComponents/+page.svelte'
+	import SignupForm from './signupForm/+page.svelte'
+	import LoginForm from './loginComponent/+page.svelte'
 
 	let showIntroduction = false
 	let showReactivity = false
@@ -13,25 +14,29 @@
 	let showLogic = false
 	let showEvents = false
 	let showBindings = false
-	let showForm = false
+	let showSignup = false
+	let showLogin = false
 
 </script>
 
-<div class="introductionHeader">
-	<h1 class="name">Andrew Kester</h1>
-	<h1 class="title">Svelte Tutorial - DGM 3770 </h1>
-</div>
-
 <div class="introductionPage">
+	<div class="introductionHeader">
+		<h1 class="title">DGM 3770 - Svelte</h1>
+		<button on:click={() => showLogin = !showLogin} class="signIn">Sign In</button>
+	</div>
 
-	<div class="sectionButtons" class:moduleActive={showIntroduction || showReactivity || showProps || showLogic || showEvents || showBindings}>
+	{#if showLogin}
+		<LoginForm />
+	{/if}
+
+	<div class="sectionButtons" class:moduleActive={showIntroduction || showReactivity || showProps || showLogic || showEvents || showBindings || showSignup}>
 		<button on:click={() => showIntroduction = !showIntroduction} class:active={showIntroduction}>Introduction</button>
 		<button on:click={() => showReactivity = !showReactivity} class:active={showReactivity}>Reactivity</button>
 		<button on:click={() => showProps = !showProps} class:active={showProps}>Props</button>
 		<button on:click={() => showLogic = !showLogic} class:active={showLogic}>Logic</button>
 		<button on:click={() => showEvents = !showEvents} class:active={showEvents}>Events</button>
 		<button on:click={() => showBindings = !showBindings} class:active={showBindings}>Bindings</button>
-		<button on:click={() => showForm = !showForm} class:active={showForm}>Forms</button>
+		<button on:click={() => showSignup = !showSignup} class:active={showSignup}>Signup Form</button>
 	</div>
 
 	<div>
@@ -53,24 +58,36 @@
 		{#if showBindings}
 			<Bindings />
 		{/if}
-		{#if showForm}
-			<Form />
+		{#if showSignup}
+			<SignupForm />
 		{/if}
 	</div>
+
 </div>
 
+
+<div class="introductionFooter">
+	<h1 class="footer">Andrew Kester</h1>
+</div>
+
+
+
+
 <style>
-	.name {
+	.title {
 		color: rgb(79, 79, 79);
 		float: left;
 	}
-	.title {
+	.signIn {
 		text-align: center;
 		float: right;
 		color: rgb(79, 79, 79);
 	}
 	.introductionPage {
-		padding: 1rem;
+		/* padding: 1rem; */
+		display: flex;
+		flex-direction: column;
+		min-height: 93.2vh;
 	}
 	.introductionHeader {
 		background: rgb(199, 199, 241);
@@ -100,11 +117,18 @@
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-around;
-		margin-bottom: 1rem;
+		margin: 1rem;
 	}
 	.moduleActive {
 		border-bottom: 1px solid rgb(93, 93, 93);
 		padding-bottom: 1rem;
+	}
+	.footer {
+		text-align: center;
+		background: rgb(199, 199, 241);
+		padding: .5rem 0;
+		width: 100%;
+		color: rgb(79, 79, 79);
 	}
 </style>
 

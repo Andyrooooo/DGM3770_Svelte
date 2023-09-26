@@ -20,7 +20,7 @@
 
 <style>
 	.props {
-		margin: 2rem 0;
+		margin: 1rem 1rem 2rem 1rem;
 		background: white;
 		padding: 1rem;
 		border-radius: 10px;

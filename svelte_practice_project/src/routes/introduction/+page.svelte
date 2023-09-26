@@ -37,5 +37,6 @@
 		padding: 1rem;
 		border-radius: 10px;
 		color: black;
+		margin: 1rem 1rem 2rem 1rem;
 	}
 </style>

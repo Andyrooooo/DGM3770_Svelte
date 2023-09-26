@@ -14,20 +14,24 @@
     import TAInputs from './textareaInputs.svelte'
 </script>
 
-<TInputs />
+<div class="bindings">
+    <TInputs />
 
-<NInputs />
+    <NInputs />
 
-<CInputs />
+    <CInputs />
 
-<SBindings />
+    <SBindings />
 
-<GrpInputs />
+    <GrpInputs />
 
-<SelectMultiple />
+    <SelectMultiple />
 
-<TAInputs />
+    <TAInputs />
+</div>
 
 <style>
-
+    .bindings {
+        margin: 1rem 1rem 2rem 1rem;
+    }
 </style>
