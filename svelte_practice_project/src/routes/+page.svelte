@@ -181,7 +181,7 @@
 		padding-top: 3px;
 	}
 	.form {
-		width: 450px;
+		width: 400px;
 		margin: 0 auto;
 	}
 </style>
