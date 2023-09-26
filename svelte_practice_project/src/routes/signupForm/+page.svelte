@@ -1,54 +1,134 @@
 <script>
+	// resets the inputs to empty strings
+	function resetInputs() {
+		person.firstName = ''
+		person.lastName = ''
+		person.email = ''
+		person.phone = ''
+		person.password = ''
+		person.confirmPassword = ''
+	}
 
+	// Our empty inital array 
+	let persons = []
+
+	// object that will take in the input data
+	let person = {
+		firstName: '',
+		lastName: '',
+		email: '',
+		phone: '',
+		password: '',
+		confirmPassword: ''
+	}
+
+	// function that will create a new object with the 'person' data and then create a new array with the new object added to it, also resets the inputs
+	function addNewPerson() {
+		/*console.log(person) */
+		const newPerson = {
+			firstName: person.firstName,
+			lastName: person.lastName,
+			email: person.email,
+			phone: person.phone,
+			password: person.password,
+			confirmPassword: person.confirmPassword
+		}
+		persons = [...persons, newPerson]
+		console.log(persons)
+		resetInputs()
+		alert("Awesome, your account was created successfully!")
+	}
 </script>
 
-<div class="signupForm">
+<div class="signupForm" on:submit={addNewPerson}>
     <h1>Sign up</h1>
 
     <form class="md:grid gap-4 grid-cols-3 grid-rows-2">
         <div class="">
             <label for="first-name" class="block text-sm font-medium leading-6 text-gray-900">First name*</label>
             <div class="mt-2">
-              <input type="text" name="first-name" id="first-name" autocomplete="given-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="John" required>
+              <input type="text" 
+			  name="first-name" 
+			  id="first-name" 
+			  autocomplete="given-name" 
+			  class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" 
+			  placeholder="John" 
+			  required
+			  bind:value={person.firstName}
+			  >
             </div>
         </div>
   
         <div class="">
             <label for="last-name" class="block text-sm font-medium leading-6 text-gray-900">Last name*</label>
             <div class="mt-2">
-                <input type="text" name="last-name" id="last-name" autocomplete="family-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="e.g. Smith" required>
+                <input type="text" 
+				name="last-name" 
+				id="last-name" 
+				autocomplete="family-name" 
+				class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" 
+				placeholder="e.g. Smith" 
+				required
+				bind:value={person.lastName}
+				>
             </div>
         </div>
   
         <div class="">
             <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Email address*</label>
             <div class="mt-2">
-                <input id="email" name="email" type="email" autocomplete="email" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="john@doe.com" required>
+                <input id="email" 
+				name="email" 
+				type="email" 
+				autocomplete="email" 
+				class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" 
+				placeholder="john@doe.com" 
+				required
+				bind:value={person.email}
+				>
             </div>
         </div>
 
         <div class="">
             <label for="phone" class="block text-sm font-medium leading-6 text-gray-900">Phone Number</label>
             <div class="mt-2">
-                <input id="phone" name="phone" type="number" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="801-123-4567">
+                <input id="phone" 
+				name="phone" 
+				type="number" 
+				class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" 
+				placeholder="801-123-4567"
+				bind:value={person.phone}
+				>
             </div>
         </div>
 
         <div class="">
-            <label for="phone" class="block text-sm font-medium leading-6 text-gray-900">Password*</label>
+            <label for="password" class="block text-sm font-medium leading-6 text-gray-900">Password*</label>
             <div class="mt-2">
-                <input id="phone" name="phone" type="password" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" required>
+                <input id="password" 
+				name="passowrd" 
+				type="password" 
+				class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" 
+				required
+				bind:value={person.password}
+				>
             </div>
         </div>
 
         <div class="">
-            <label for="phone" class="block text-sm font-medium leading-6 text-gray-900">Re-enter Password*</label>
+            <label for="reenterPassword" class="block text-sm font-medium leading-6 text-gray-900">Re-enter Password*</label>
             <div class="mt-2">
-                <input id="phone" name="phone" type="password" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" required>
+                <input id="reenterPassword" 
+				name="reenterPassword"
+				type="password" 
+				class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" 
+				required
+				bind:value={person.confirmPassword}
+				>
             </div>
         </div>
+
 		<div class="">
-            
         </div>
 
         <div class="container flex flex-col items-center">
@@ -57,6 +137,7 @@
         
     </form>
 </div>
+
 
 <style>
     .signupForm {
@@ -102,3 +183,12 @@
         <input type="text" placeholder="Confirm Password">
 
         <button>Sign up</button> -->
+
+
+<!-- Old custom event code -->
+<!-- function addNewPerson() {
+		dispatch('personAdded', newPerson)
+		// resetInputs() -->
+<!-- import { createEventDispatcher } from 'svelte'
+
+		const dispatch = createEventDispatcher()  -->

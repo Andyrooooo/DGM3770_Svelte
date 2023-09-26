@@ -4,8 +4,8 @@
 	$: divided = count / 2;
 
 	$: {
-		console.log(`the count is ${count}`);
-		console.log(`I'm just here to tag along`);
+		alert(`the count is ${count}`);
+		alert(`I'm just here to tag along`);
 	}
 
 	$: if (count >= 10) {

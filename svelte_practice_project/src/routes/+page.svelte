@@ -71,6 +71,7 @@
 				<Bindings />
 			{/if}
 			{#if showSignup}
+				<!-- <SignupForm on:personAdded={addingNewPerson}/> -->
 				<SignupForm />
 			{/if}
 		</div>
@@ -210,3 +211,14 @@
 		{:else if showBindings}
 			<Bindings />
 		{/if} -->
+
+
+
+		<!-- old custom event code -->
+		<!-- let persons = []
+
+		function addingNewPerson(event) {
+			const person = event.detail
+			persons = [...persons, person]
+			console.log(persons)
+		}  -->
