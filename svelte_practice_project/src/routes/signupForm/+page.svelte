@@ -24,7 +24,7 @@
 	}
 
 	// async function that will take the input values and push them up to our parent component
-	const addNewPerson = async () => {
+	function addNewPerson() {
 		dispatch('personAdded', person)
 		resetInputs()
 		alert("Awesome, your account was created successfully!")

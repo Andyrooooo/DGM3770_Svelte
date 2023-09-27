@@ -20,7 +20,7 @@
 	// Our empty inital array 
 	let persons = []
 
-	function addingNewPerson(event) {
+	const addingNewPerson = async (event) => {
 		const person = event.detail
 
 		// creates an id for the new object if it does not already have one
@@ -49,18 +49,32 @@
 		})
 	}
 
-	
+
 	// function that will check the Persons array and find the email and password requested to login
-	function checkTheLogin(event) {
+	let checkTheLogin = async (event) => {
 		// data passed up from the login component
 		const {email, password} = event.detail
 
-		const user = persons.find(person => person.email === email && person.password === password)
+		// 
+		const arrayUser = persons.find(person => person.email === email && person.password === password)
+
+		const response = await fetch('http://localhost:3001/persons')
+		if (!response.ok) throw Error('There was an error fetching the data')
+		let data = await response.json()
+
+		let user = data.find(person => person.email === email && person.password === password)
+			
+
+		if (arrayUser) {
+      		alert('Array data: Login successful!')
+		} else {
+			alert('Array data: Invalid email or password. Please try again.')
+		}
 
 		if (user) {
-      		alert('Login successful!')
+      		alert('JSON data: Login successful!')
 		} else {
-			alert('Invalid email or password. Please try again.')
+			alert('JSON data: Invalid email or password. Please try again.')
 		}
 	}
 </script>

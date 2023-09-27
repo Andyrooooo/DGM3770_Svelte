@@ -3,10 +3,10 @@
 	$: doubled = count * 2;
 	$: divided = count / 2;
 
-	$: {
+	/* $: {
 		alert(`the count is ${count}`);
 		alert(`I'm just here to tag along`);
-	}
+	} */
 
 	$: if (count >= 10) {
 		alert(`Whoa there partner, look at the count ${count} it's too high!`);
