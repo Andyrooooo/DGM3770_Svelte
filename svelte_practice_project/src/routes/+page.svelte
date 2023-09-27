@@ -67,6 +67,7 @@
 
 		if (arrayUser) {
       		alert('Array data: Login successful!')
+			showLogin = false
 		} else {
 			alert('Array data: Invalid email or password. Please try again.')
 		}
