@@ -17,6 +17,52 @@
 	let showSignup = false
 	let showLogin = false
 
+	// Our empty inital array 
+	let persons = []
+
+	function addingNewPerson(event) {
+		const person = event.detail
+
+		// creates an id for the new object if it does not already have one
+		let newID = persons.length > 0 ? persons[persons.length - 1].id + 1 : 1
+
+		// new person object gets assigned the input values from our other array
+		const newPerson = {
+			firstName: person.firstName,
+			lastName: person.lastName,
+			email: person.email,
+			phone: person.phone,
+			password: person.password,
+			confirmPassword: person.confirmPassword,
+			id: newID
+		}
+		// we then add the new object to the array as a NEW array
+		persons = [...persons, newPerson]
+
+		// fetches the JSON server data and adds the new object to it
+		fetch('http://localhost:3001/persons', {
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json'
+		},
+		body: JSON.stringify(person)
+		})
+	}
+
+	
+	// function that will check the Persons array and find the email and password requested to login
+	function checkTheLogin(event) {
+		// data passed up from the login component
+		const {email, password} = event.detail
+
+		const user = persons.find(person => person.email === email && person.password === password)
+
+		if (user) {
+      		alert('Login successful!')
+		} else {
+			alert('Invalid email or password. Please try again.')
+		}
+	}
 </script>
 
 
@@ -36,7 +82,7 @@
 				</div>
 		
 				<div class="form">
-					<LoginForm />
+					<LoginForm on:checkLogin={checkTheLogin}/>
 				</div>
 			</div>
 		{/if}
@@ -71,8 +117,8 @@
 				<Bindings />
 			{/if}
 			{#if showSignup}
-				<!-- <SignupForm on:personAdded={addingNewPerson}/> -->
-				<SignupForm />
+				<SignupForm on:personAdded={addingNewPerson}/>
+				<!-- <SignupForm /> -->
 			{/if}
 		</div>
 	

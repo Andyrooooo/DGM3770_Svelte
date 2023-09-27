@@ -1,4 +1,8 @@
 <script>
+	import { createEventDispatcher } from 'svelte'
+
+	const dispatch = createEventDispatcher()
+
 	// resets the inputs to empty strings
 	function resetInputs() {
 		person.firstName = ''
@@ -8,9 +12,6 @@
 		person.password = ''
 		person.confirmPassword = ''
 	}
-
-	// Our empty inital array 
-	let persons = []
 
 	// object that will take in the input data
 	let person = {
@@ -22,19 +23,9 @@
 		confirmPassword: ''
 	}
 
-	// function that will create a new object with the 'person' data and then create a new array with the new object added to it, also resets the inputs
-	function addNewPerson() {
-		/*console.log(person) */
-		const newPerson = {
-			firstName: person.firstName,
-			lastName: person.lastName,
-			email: person.email,
-			phone: person.phone,
-			password: person.password,
-			confirmPassword: person.confirmPassword
-		}
-		persons = [...persons, newPerson]
-		console.log(persons)
+	// async function that will take the input values and push them up to our parent component
+	const addNewPerson = async () => {
+		dispatch('personAdded', person)
 		resetInputs()
 		alert("Awesome, your account was created successfully!")
 	}
@@ -94,7 +85,7 @@
             <div class="mt-2">
                 <input id="phone" 
 				name="phone" 
-				type="number" 
+				type="tel" 
 				class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" 
 				placeholder="801-123-4567"
 				bind:value={person.phone}

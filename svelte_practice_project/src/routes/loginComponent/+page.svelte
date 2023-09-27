@@ -1,23 +1,47 @@
 <script>
+    import { createEventDispatcher } from 'svelte'
 
+    const dispatch = createEventDispatcher()
+
+    let email = ''
+    let password = ''
+
+    function loginCheck() {
+        dispatch('checkLogin', {email, password})
+    }
 </script>
 
 <div class="loginForm">
     <h1>Sign In</h1>
 
-    <form class="">
+    <form class="" on:submit={loginCheck}>
   
         <div class="">
             <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Email address*</label>
             <div class="mt-2">
-                <input id="email" name="email" type="email" autocomplete="email" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="john@doe.com" required>
+                <input 
+                id="email" 
+                name="email" 
+                type="email" 
+                autocomplete="email" 
+                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" 
+                placeholder="john@doe.com" 
+                required
+                bind:value={email}
+                >
             </div>
         </div>
 
         <div class="">
             <label for="phone" class="block text-sm font-medium leading-6 text-gray-900">Password*</label>
             <div class="mt-2">
-                <input id="phone" name="phone" type="password" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" required>
+                <input id="phone" 
+                name="phone" 
+                type="password" 
+                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" 
+                required
+                bind:value={password}
+                >
             </div>
         </div>
 
