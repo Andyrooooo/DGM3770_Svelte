@@ -1,9 +1,12 @@
 <script lang=ts>
 import OnMount from './onMount.svelte'
+
+import BeforeAfter from './beforeAfterUpdate.svelte'
 </script>
 
 <div class="lifeCycle">
     <OnMount />
+    <BeforeAfter />
 </div>
 
 
