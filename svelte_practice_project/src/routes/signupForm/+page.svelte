@@ -23,10 +23,11 @@
 		confirmPassword: ''
 	}
 
+    // modal variables that change the message and popup
     let modalMessage = ''
     let modalPopup = false
 
-	// async function that will take the input values and push them up to our parent component
+	// function that will take the input values and push them up to our parent component
 	function addNewPerson() {
 		dispatch('personAdded', person)
 		resetInputs()

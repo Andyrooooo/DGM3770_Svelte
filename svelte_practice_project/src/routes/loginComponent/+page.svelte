@@ -7,6 +7,7 @@
     let password = ''
     /* export let loginAlert = false */
 
+    // custom event that passes up the login component to the parent component
     function loginCheck() {
         dispatch('checkLogin', {email, password})
     }

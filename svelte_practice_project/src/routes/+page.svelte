@@ -7,6 +7,7 @@
 	import Bindings from './bindings/+page.svelte'
 	import SignupForm from './signupForm/+page.svelte'
 	import LoginForm from './loginComponent/+page.svelte'
+	import LifeCycle from './lifecycle/+page.svelte'
 
 	let showIntroduction = false
 	let showReactivity = false
@@ -16,6 +17,7 @@
 	let showBindings = false
 	let showSignup = false
 	let showLogin = false
+	let showLifeCycle = true
 
 	// Our empty inital array 
 	let persons = []
@@ -39,14 +41,14 @@
 		// we then add the new object to the array as a NEW array
 		persons = [...persons, newPerson]
 
-		// fetches the JSON server data and adds the new object to it
+		/* // fetches the JSON server data and adds the new object to it
 		fetch('http://localhost:8000/persons', {
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json'
 		},
 		body: JSON.stringify(person)
-		})
+		}) */
 	}
 
 
@@ -58,25 +60,25 @@
 		// 
 		const arrayUser = persons.find(person => person.email === email && person.password === password)
 
-		const response = await fetch('http://localhost:8000/persons')
+		/* const response = await fetch('http://localhost:8000/persons')
 		if (!response.ok) throw Error('There was an error fetching the data')
 		let data = await response.json()
 
-		let user = data.find(person => person.email === email && person.password === password)
+		let user = data.find(person => person.email === email && person.password === password) */
 			
 
 		if (arrayUser) {
-      		alert('Array data: Login successful!')
+      		alert('Login successful!')
 			showLogin = false
 		} else {
-			alert('Array data: Invalid email or password. Please try again.')
+			alert('Invalid email or password. Please try again.')
 		}
 
-		if (user) {
+		/* if (user) {
       		alert('JSON data: Login successful!')
 		} else {
 			alert('JSON data: Invalid email or password. Please try again.')
-		}
+		} */
 	}
 </script>
 
@@ -102,7 +104,7 @@
 			</div>
 		{/if}
 	
-		<div class="sectionButtons" class:moduleActive={showIntroduction || showReactivity || showProps || showLogic || showEvents || showBindings || showSignup}>
+		<div class="sectionButtons" class:moduleActive={showIntroduction || showReactivity || showProps || showLogic || showEvents || showBindings || showSignup || showLifeCycle}>
 			<button on:click={() => showIntroduction = !showIntroduction} class:active={showIntroduction}>Introduction</button>
 			<button on:click={() => showReactivity = !showReactivity} class:active={showReactivity}>Reactivity</button>
 			<button on:click={() => showProps = !showProps} class:active={showProps}>Props</button>
@@ -110,6 +112,7 @@
 			<button on:click={() => showEvents = !showEvents} class:active={showEvents}>Events</button>
 			<button on:click={() => showBindings = !showBindings} class:active={showBindings}>Bindings</button>
 			<button on:click={() => showSignup = !showSignup} class:active={showSignup}>Signup Form</button>
+			<button on:click={() => showLifeCycle = !showLifeCycle} class:active={showLifeCycle}>Life Cycle</button>
 		</div>
 	
 		<div>
@@ -133,6 +136,10 @@
 			{/if}
 			{#if showSignup}
 				<SignupForm on:personAdded={addingNewPerson}/>
+				<!-- <SignupForm /> -->
+			{/if}
+			{#if showLifeCycle}
+				<LifeCycle />
 				<!-- <SignupForm /> -->
 			{/if}
 		</div>
