@@ -5,6 +5,7 @@
 
     let email = ''
     let password = ''
+    /* export let loginAlert = false */
 
     function loginCheck() {
         dispatch('checkLogin', {email, password})
@@ -45,6 +46,10 @@
             </div>
         </div>
 
+        <!-- {#if loginAlert}
+        <p class="loginAlert">Invalid username or password</p>
+        {/if} -->
+
         <div class="container flex flex-col items-center">
             <button class="block w-half rounded- border-0 py-1.5 loginButton">Login</button>
         </div>
@@ -83,5 +88,11 @@
     .loginButton:hover {
         background: rgb(199, 199, 241);
         border: 2px solid rgb(199, 199, 241);
+    }
+    .loginAlert {
+        color: red;
+        text-align: center;
+        font-size: .8rem;
+        margin-top: -1rem;
     }
 </style>

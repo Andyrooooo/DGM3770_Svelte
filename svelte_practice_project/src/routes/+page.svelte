@@ -40,7 +40,7 @@
 		persons = [...persons, newPerson]
 
 		// fetches the JSON server data and adds the new object to it
-		fetch('http://localhost:3001/persons', {
+		fetch('http://localhost:8000/persons', {
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json'
@@ -58,7 +58,7 @@
 		// 
 		const arrayUser = persons.find(person => person.email === email && person.password === password)
 
-		const response = await fetch('http://localhost:3001/persons')
+		const response = await fetch('http://localhost:8000/persons')
 		if (!response.ok) throw Error('There was an error fetching the data')
 		let data = await response.json()
 
@@ -168,7 +168,7 @@
 		/* padding: 1rem; */
 		display: flex;
 		flex-direction: column;
-		min-height: 93.2vh;
+		min-height: 94.6vh;
 	}
 	.introductionHeader {
 		background: rgb(199, 199, 241);
