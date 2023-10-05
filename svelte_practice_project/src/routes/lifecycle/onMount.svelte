@@ -33,7 +33,7 @@
     }
     .hello {
         color: black;
-        font-size: 5rem;
+        font-size: 3rem;
         font-weight: bold;
         text-align: center;
         margin: 3rem 0;
