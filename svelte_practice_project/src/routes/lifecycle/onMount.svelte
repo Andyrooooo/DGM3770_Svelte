@@ -11,10 +11,10 @@
 
 <div class="onMount">
     <h1 class="onMountTitle">onMount</h1>
+    <p class="message">I'm using the onMount to display this text</p>
 
     {#if show}
     <p in:fade out:fade class="hello">Hello World!</p>
-    <p class="message">I'm using the onMount to display this text</p>
     {/if}
 
 </div>

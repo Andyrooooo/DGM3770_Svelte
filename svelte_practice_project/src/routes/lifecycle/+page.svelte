@@ -2,11 +2,14 @@
 import OnMount from './onMount.svelte'
 
 import BeforeAfter from './beforeAfterUpdate.svelte'
+
+import Tick from './tick.svelte'
 </script>
 
 <div class="lifeCycle">
     <OnMount />
     <BeforeAfter />
+    <Tick />
 </div>
 
 

@@ -63,21 +63,15 @@ afterUpdate(() => {
 
 <style>
     .beforeAfter {
-        background: rgb(235, 235, 235);
+        background: rgb(181, 181, 181);
         padding: 1rem;
         color: black;
     }
     .beforeAfterTitle {
         color: black;
-        border-bottom: 1px solid rgb(195, 195, 195);
-        margin-bottom: 1rem;
+        border-bottom: 1px solid rgb(154, 154, 154);
     }
     .description {
-        text-align: center;
-        background: rgb(136, 136, 170);
-        padding: .5rem;
-        color: white;
-        border-radius: 20px;
         margin-bottom: 2rem;
     }
     .name {
@@ -92,38 +86,34 @@ afterUpdate(() => {
         justify-content: center;
     }
     .addBTN {
-        border: 2px solid rgb(176, 176, 221);
-        color: rgb(176, 176, 221);
+        border: 2px solid rgb(166, 166, 232);
+        color: rgb(166, 166, 232);
         border-radius: 10px;
         padding: .25rem 1.5rem .75rem 1.5rem;
         cursor: pointer;
         font-size: 2rem;
     }
     .addBTN:hover {
-        background: rgb(176, 176, 221);
+        background: rgb(166, 166, 232);
         color: rgb(79, 79, 79);
     }
     .todoList {
-        background: rgb(214, 214, 214);
-        padding: 1.5rem;
-        height: 100%;
+        background: rgb(255, 255, 255);
+        padding: .5rem;
     }
     .todo {
         color: rgb(111, 111, 111);
-        margin-bottom: 10px;
-        height: 100%;
-        scroll-behavior: smooth;
     }
     .todoCount {
         display: flex;
         justify-content: space-around;
-        background-color: rgb(184, 184, 184);
+        background-color: rgb(114, 114, 114);
         border-top-right-radius: 10px;
         border-top-left-radius: 10px;
         padding: 5px 0;
     }
-    .message {color: black;}
+    .message {color: rgb(255, 255, 255);}
     .important {
-        color: rgb(211, 211, 211);
+        color: rgb(137, 137, 238);
     }
 </style>
