@@ -8,6 +8,7 @@
 	import SignupForm from './signupForm/+page.svelte'
 	import LoginForm from './loginComponent/+page.svelte'
 	import LifeCycle from './lifecycle/+page.svelte'
+	import Stores from './stores/+page.svelte'
 
 	let showIntroduction = false
 	let showReactivity = false
@@ -17,7 +18,8 @@
 	let showBindings = false
 	let showSignup = false
 	let showLogin = false
-	let showLifeCycle = true
+	let showLifeCycle = false
+	let showStores = false
 
 	// Our empty inital array 
 	let persons = []
@@ -104,7 +106,7 @@
 			</div>
 		{/if}
 	
-		<div class="sectionButtons" class:moduleActive={showIntroduction || showReactivity || showProps || showLogic || showEvents || showBindings || showSignup || showLifeCycle}>
+		<div class="sectionButtons" class:moduleActive={showIntroduction || showReactivity || showProps || showLogic || showEvents || showBindings || showSignup || showLifeCycle || showStores}>
 			<button on:click={() => showIntroduction = !showIntroduction} class:active={showIntroduction}>Introduction</button>
 			<button on:click={() => showReactivity = !showReactivity} class:active={showReactivity}>Reactivity</button>
 			<button on:click={() => showProps = !showProps} class:active={showProps}>Props</button>
@@ -113,6 +115,7 @@
 			<button on:click={() => showBindings = !showBindings} class:active={showBindings}>Bindings</button>
 			<button on:click={() => showSignup = !showSignup} class:active={showSignup}>Signup Form</button>
 			<button on:click={() => showLifeCycle = !showLifeCycle} class:active={showLifeCycle}>Life Cycle</button>
+			<button on:click={() => showStores = !showStores} class:active={showStores}>Stores</button>
 		</div>
 	
 		<div>
@@ -140,7 +143,9 @@
 			{/if}
 			{#if showLifeCycle}
 				<LifeCycle />
-				<!-- <SignupForm /> -->
+			{/if}
+			{#if showStores}
+				<Stores />
 			{/if}
 		</div>
 	

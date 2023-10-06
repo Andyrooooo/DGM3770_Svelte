@@ -37,6 +37,8 @@
     .tick {
         background: rgb(129, 129, 129);
         padding: 1rem;
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px;
     }
     .tickTitle {
     border-bottom: 1px solid rgb(147, 147, 147);

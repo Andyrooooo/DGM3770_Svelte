@@ -32,7 +32,7 @@ afterUpdate(() => {
 <div class="beforeAfter">
     <h1 class="beforeAfterTitle">BeforeUpdate and afterUpdate</h1>
 
-    <p class="description">In here we use <a class="important">beforeUpdate</a> and <a class="important">afterUpdate</a> to show us how many todos when did have and how many we now have</p>
+    <p class="description">In here we use <a class="important">beforeUpdate</a> and <a class="important">afterUpdate</a> to show us how many todos we have before and after we add a new todo</p>
 
     <form on:submit={addNewTodo}>
         <label for="name">Add Todo</label>
