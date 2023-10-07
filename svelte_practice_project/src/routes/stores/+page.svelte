@@ -1,9 +1,13 @@
 <script lang=ts>
     import Writeable from './writeableStores.svelte'
+
+    import Auto from './autoSubscriptions.svelte'
 </script>
     
 <div class="stores">
     <Writeable />
+
+    <Auto />
 </div>
 
 <style>

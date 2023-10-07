@@ -48,17 +48,17 @@
     }
 
     .important {
-        color: rgb(166, 166, 232);
+        color: rgb(183, 183, 229);
     }
 
     .vehicleBTN {
         padding: .5rem 1rem;
-        color: rgb(166, 166, 232);
-        border: 2px solid rgb(166, 166, 232);
+        color: rgb(183, 183, 229);
+        border: 2px solid rgb(183, 183, 229);
         border-radius: 10px;
     }
     .vehicleBTN:hover {
-        background: rgb(166, 166, 232);
+        background: rgb(183, 183, 229);
         color: rgb(79, 79, 79);
     }
     .buttonConatiner {
