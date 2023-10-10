@@ -6,6 +6,8 @@
     import Read from './readableStores.svelte'
 
     import Derived from './derivedStores.svelte'
+
+    import Custom from './customStores.svelte'
 </script>
     
 <div class="stores">
@@ -16,6 +18,8 @@
     <Read />
 
     <Derived />
+
+    <Custom />
 </div>
 
 <style>
