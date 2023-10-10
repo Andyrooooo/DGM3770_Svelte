@@ -35,10 +35,12 @@
 </script>
 
 <form on:submit={addCoworker}>
-    <input type="text" placeholder="Janice" bind:value={newName}>
-    <input type="number" placeholder="28" bind:value={newAge}>
-    <input type="text" placeholder="Developer" bind:value={newPosition}>
-    <button type="submit">Add</button>
+    <input type="text" placeholder="name" bind:value={newName}>
+    <input type="number" placeholder="age" bind:value={newAge}>
+    <input type="text" placeholder="position" bind:value={newPosition}>
+    <div class="addBTNContainer">
+        <button type="submit">Add</button>
+    </div>
 </form>
 
 
@@ -57,14 +59,19 @@
         width: 32%;
     }
     button {
-        flex-basis: 100%;
         border: 2px solid rgb(166, 166, 232);
         border-radius: 10px; 
         color:rgb(166, 166, 232);
         padding: .5rem;
+        width: 20%;
         }
     button:hover {
         background:rgb(166, 166, 232);
         color: white;
+    }
+    .addBTNContainer {
+        flex-basis: 100%;
+        display: flex;
+        justify-content: center;
     }
 </style>

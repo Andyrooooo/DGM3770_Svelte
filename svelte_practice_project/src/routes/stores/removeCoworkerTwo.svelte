@@ -21,8 +21,7 @@
         {/each}
     </select>
 
-    <button type="submit" class="removeBTN">Remove</button>
-
+        <button type="submit" class="removeBTN">Remove</button>
 </form>
 
 <style>
@@ -36,16 +35,17 @@
         border: 2px solid rgb(112, 112, 112);
         border-radius: 5px;
         padding: .5rem;
+        background: rgb(196, 196, 196);
     }
     .removeBTN {
         flex-basis: 20%;
-        border: 2px solid rgb(255, 148, 148);
-        color: rgb(255, 148, 148);
+        border: 2px solid rgb(255, 106, 106);
+        color: rgb(255, 106, 106);
         padding: .5rem;
         border-radius: 10px;
     }
     .removeBTN:hover {
-        background:rgb(255, 148, 148);
+        background:rgb(255, 106, 106);
         color: white;
     }
 </style>

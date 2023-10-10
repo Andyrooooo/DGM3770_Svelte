@@ -2,12 +2,16 @@
     import Writeable from './writeableStores.svelte'
 
     import Auto from './autoSubscriptions.svelte'
+
+    import Read from './readableStores.svelte'
 </script>
     
 <div class="stores">
     <Writeable />
 
     <Auto />
+
+    <Read />
 </div>
 
 <style>
