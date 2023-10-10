@@ -4,6 +4,8 @@
     import Auto from './autoSubscriptions.svelte'
 
     import Read from './readableStores.svelte'
+
+    import Derived from './derivedStores.svelte'
 </script>
     
 <div class="stores">
@@ -12,6 +14,8 @@
     <Auto />
 
     <Read />
+
+    <Derived />
 </div>
 
 <style>
