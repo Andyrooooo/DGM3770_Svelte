@@ -8,6 +8,8 @@
     import Derived from './derivedStores.svelte'
 
     import Custom from './customStores.svelte'
+
+    import Bindings from './storeBindings.svelte'
 </script>
     
 <div class="stores">
@@ -20,6 +22,8 @@
     <Derived />
 
     <Custom />
+
+    <Bindings />
 </div>
 
 <style>
