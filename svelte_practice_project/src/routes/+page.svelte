@@ -9,6 +9,10 @@
 	import LoginForm from './loginComponent/+page.svelte'
 	import LifeCycle from './lifecycle/+page.svelte'
 	import Stores from './stores/+page.svelte'
+	import { persons } from './svelteTutorialUsers.js'
+	import { alertModal } from './svelteTutorialUsers.js'
+	import { alertMessage } from './svelteTutorialUsers.js'
+	import { onMount } from 'svelte'
 
 	let showIntroduction = false
 	let showReactivity = false
@@ -17,18 +21,19 @@
 	let showEvents = false
 	let showBindings = false
 	let showSignup = false
-	let showLogin = false
+	let showLogin
+	onMount(() => {
+		showLogin = true
+	})
 	let showLifeCycle = false
 	let showStores = false
 
-	// Our empty inital array 
-	let persons = []
-
 	const addingNewPerson = async (event) => {
+		// data passed up from the signup form component using a custom event
 		const person = event.detail
 
 		// creates an id for the new object if it does not already have one
-		let newID = persons.length > 0 ? persons[persons.length - 1].id + 1 : 1
+		let newID = $persons.length > 0 ? $persons[$persons.length - 1].id + 1 : 1
 
 		// new person object gets assigned the input values from our other array
 		const newPerson = {
@@ -40,17 +45,12 @@
 			confirmPassword: person.confirmPassword,
 			id: newID
 		}
-		// we then add the new object to the array as a NEW array
-		persons = [...persons, newPerson]
 
-		/* // fetches the JSON server data and adds the new object to it
-		fetch('http://localhost:8000/persons', {
-		method: 'POST',
-		headers: {
-			'Content-Type': 'application/json'
-		},
-		body: JSON.stringify(person)
-		}) */
+		// We then pass the new person object to the custom data store
+		persons.addUser(newPerson)
+
+		// after user is added we close the form
+		showSignup = false
 	}
 
 
@@ -59,101 +59,129 @@
 		// data passed up from the login component
 		const {email, password} = event.detail
 
-		// 
-		const arrayUser = persons.find(person => person.email === email && person.password === password)
+		// variable that will find the user in the array that matches the email and password if it is there
+		const arrayUser = $persons.find(person => person.email === email && person.password === password)
 
-		/* const response = await fetch('http://localhost:8000/persons')
-		if (!response.ok) throw Error('There was an error fetching the data')
-		let data = await response.json()
-
-		let user = data.find(person => person.email === email && person.password === password) */
-			
-
+		// if-else statement that will populate the message modal when the credentials are correct or incorrect
 		if (arrayUser) {
-      		alert('Login successful!')
+      		alertMessage.set('Login successful!')
+			alertModal.set(true)
 			showLogin = false
 		} else {
-			alert('Invalid email or password. Please try again.')
+			alertMessage.set('Invalid email or password. Please try again.')
+			alertModal.set(true)
 		}
 
-		/* if (user) {
-      		alert('JSON data: Login successful!')
-		} else {
-			alert('JSON data: Invalid email or password. Please try again.')
-		} */
 	}
+
+	// function that will open the signup form component
+	let openSignup = async () => {
+		showLogin = false
+		showSignup = true
+	}
+
+	// this function will close the modal that gives messages to the user
+	function closeModal() {
+        alertModal.set(false)
+    }
 </script>
 
 
 
 <div class:loginModalBackground={showLogin}>
+	<div class:signupModalBackground={showSignup}>
 
-	<div class="introductionPage">
-		<div class="introductionHeader">
-			<h1 class="title">DGM 3770 - Svelte</h1>
-			<button on:click={() => showLogin = true} class="signIn">Sign In</button>
-		</div>
-
-		{#if showLogin}
-			<div class:loginModal={showLogin}>
-				<div class="cancelButtonContainer">
-					<button on:click={() => showLogin = false} class="cancel">X</button>
-				</div>
-		
-				<div class="form">
-					<LoginForm on:checkLogin={checkTheLogin}/>
-				</div>
+		<div class="introductionPage">
+			<div class="introductionHeader">
+				<h1 class="title">DGM 3770 - Svelte</h1>
+				<!-- <button on:click={() => showSignup = true} class="signIn">| Sign Up</button>
+				<button on:click={() => showLogin = true} class="signIn">Sign In | </button> -->
+				<button on:click={() => showLogin = true} class="signIn">Log Out</button>
 			</div>
-		{/if}
-	
-		<div class="sectionButtons" class:moduleActive={showIntroduction || showReactivity || showProps || showLogic || showEvents || showBindings || showSignup || showLifeCycle || showStores}>
-			<button on:click={() => showIntroduction = !showIntroduction} class:active={showIntroduction}>Introduction</button>
-			<button on:click={() => showReactivity = !showReactivity} class:active={showReactivity}>Reactivity</button>
-			<button on:click={() => showProps = !showProps} class:active={showProps}>Props</button>
-			<button on:click={() => showLogic = !showLogic} class:active={showLogic}>Logic</button>
-			<button on:click={() => showEvents = !showEvents} class:active={showEvents}>Events</button>
-			<button on:click={() => showBindings = !showBindings} class:active={showBindings}>Bindings</button>
-			<button on:click={() => showSignup = !showSignup} class:active={showSignup}>Signup Form</button>
-			<button on:click={() => showLifeCycle = !showLifeCycle} class:active={showLifeCycle}>Life Cycle</button>
-			<button on:click={() => showStores = !showStores} class:active={showStores}>Stores</button>
-		</div>
-	
-		<div>
-			{#if showIntroduction}
-				<Introduction />
+
+			{#if showLogin}
+				<div class:loginModal={showLogin}>
+					<!-- <div class="cancelButtonContainer">
+						<button on:click={() => showLogin = false} class="cancel">X</button>
+					</div> -->
+			
+					<div class="form">
+						<!-- these are custom events that check the login and when the signup form is clicked in the login form -->
+						<LoginForm on:checkLogin={checkTheLogin}  on:bringUpSignup={openSignup}/>
+					</div>
+				</div>
 			{/if}
-			{#if showReactivity}
-				<Reactivity />
+
+			{#if $alertModal}
+				<div class="messageModal">
+					<p class="modalMessage">{$alertMessage}</p>
+					<div class="modalButtonContainer">
+						<button class="close" on:click={closeModal}>Close</button>
+					</div>
+				</div>
 			{/if}
-			{#if showProps}
-				<Props />
-			{/if}
-			{#if showLogic}
-				<Logic />
-			{/if}
-			{#if showEvents}
-				<Events />
-			{/if}
-			{#if showBindings}
-				<Bindings />
-			{/if}
+
 			{#if showSignup}
-				<SignupForm on:personAdded={addingNewPerson}/>
-				<!-- <SignupForm /> -->
+				<div class:signupModal={showSignup}>
+					<!-- <div class="cancelButtonContainer">
+						<button on:click={() => showSignup = false} class="cancel">X</button>
+					</div> -->
+			
+					<div class="">
+						<SignupForm on:personAdded={addingNewPerson} />
+					</div>
+				</div>
 			{/if}
-			{#if showLifeCycle}
-				<LifeCycle />
-			{/if}
-			{#if showStores}
-				<Stores />
-			{/if}
+		
+			<div class="sectionButtons" class:moduleActive={showIntroduction || showReactivity || showProps || showLogic || showEvents || showBindings || showLifeCycle || showStores}>
+				<button on:click={() => showIntroduction = !showIntroduction} class:active={showIntroduction}>Introduction</button>
+				<button on:click={() => showReactivity = !showReactivity} class:active={showReactivity}>Reactivity</button>
+				<button on:click={() => showProps = !showProps} class:active={showProps}>Props</button>
+				<button on:click={() => showLogic = !showLogic} class:active={showLogic}>Logic</button>
+				<button on:click={() => showEvents = !showEvents} class:active={showEvents}>Events</button>
+				<button on:click={() => showBindings = !showBindings} class:active={showBindings}>Bindings</button>
+				<!-- <button on:click={() => showSignup = !showSignup} class:active={showSignup}>Signup Form</button> -->
+				<button on:click={() => showLifeCycle = !showLifeCycle} class:active={showLifeCycle}>Life Cycle</button>
+				<button on:click={() => showStores = !showStores} class:active={showStores}>Stores</button>
+			</div>
+		
+			<div>
+				{#if showIntroduction}
+					<Introduction />
+				{/if}
+				{#if showReactivity}
+					<Reactivity />
+				{/if}
+				{#if showProps}
+					<Props />
+				{/if}
+				{#if showLogic}
+					<Logic />
+				{/if}
+				{#if showEvents}
+					<Events />
+				{/if}
+				{#if showBindings}
+					<Bindings />
+				{/if}
+				<!-- {#if showSignup}
+					<SignupForm on:personAdded={addingNewPerson}/>
+				{/if} -->
+				{#if showLifeCycle}
+					<LifeCycle />
+				{/if}
+				{#if showStores}
+					<Stores />
+				{/if}
+			</div>
+		
 		</div>
-	
-	</div>
-	
-	
-	<div class="introductionFooter">
-		<h1 class="footer">Andrew Kester</h1>
+		
+		
+		<div class="introductionFooter">
+			<h1 class="footer">Andrew Kester</h1>
+		</div>
+
 	</div>
 </div>
 
@@ -235,7 +263,18 @@
 		z-index: 1;
 		position: relative;
 	}
-	.cancel {
+	.signupModalBackground {
+		z-index: 1;
+		position: relative;
+	}
+	.signupModal {
+		background: rgba(84, 84, 84, 0.95);
+		z-index: 2;
+		min-height: 100vh;
+		min-width: 100vw;
+		position: absolute;
+	}
+	/* .cancel {
 		border: none;
 		text-align: right;
 		border: 1px solid rgb(176, 176, 221);
@@ -253,11 +292,42 @@
 		margin-bottom: 4.8rem;
 		padding-right: 1rem;
 		padding-top: 3px;
-	}
+	} */
 	.form {
 		width: 400px;
 		margin: 0 auto;
 	}
+
+	.messageModal {
+        background: rgb(199, 199, 241);
+        color:rgb(132, 132, 160);
+        padding: 1rem;
+        width: 40vw;
+        position: absolute;
+        top: 30vh;
+        right: 30vw;
+        border-radius: 10px;
+		z-index: 3;
+    }
+    .modalMessage {
+        border-bottom: 1px solid rgb(163, 163, 197);
+        color: black;
+        text-align: center;
+        padding-bottom: 1rem;
+    }
+    .modalButtonContainer {width: 100%; display: flex; justify-content: center;}
+    .close {
+        border: 2px solid rgb(132, 132, 160);
+        margin-top: 1rem;
+        padding: .4rem 1.5rem;
+        border-radius: 5px;
+        font-weight: 700;
+        color: rgb(132, 132, 160);
+    }
+    .close:hover {
+        border: 2px solid white;
+        color: white;
+    }
 </style>
 
 
@@ -294,4 +364,31 @@
 			const person = event.detail
 			persons = [...persons, person]
 			console.log(persons)
+		}  -->
+
+
+
+		
+		<!--  // fetches the JSON server data and adds the new object to it
+		fetch('http://localhost:8000/persons', {
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json'
+		},
+		body: JSON.stringify(person)
+		})  -->
+
+
+		<!-- const response = await fetch('http://localhost:8000/persons')
+		if (!response.ok) throw Error('There was an error fetching the data')
+		let data = await response.json()
+
+		let user = data.find(person => person.email === email && person.password === password) -->
+
+
+		<!-- 
+		 if (user) {
+      		alert('JSON data: Login successful!')
+		} else {
+			alert('JSON data: Invalid email or password. Please try again.')
 		}  -->

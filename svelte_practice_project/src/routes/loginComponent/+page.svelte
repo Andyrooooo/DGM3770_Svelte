@@ -11,6 +11,11 @@
     function loginCheck() {
         dispatch('checkLogin', {email, password})
     }
+
+    // custom event that when clicked will close the login component and open the signup component
+    function bringUpSignup() {
+        dispatch('bringUpSignup')
+    }
 </script>
 
 <div class="loginForm">
@@ -54,8 +59,11 @@
         <div class="container flex flex-col items-center">
             <button class="block w-half rounded- border-0 py-1.5 loginButton">Login</button>
         </div>
-        
     </form>
+
+    <div class="container flex flex-col items-center">
+        <p>No account? Signup <button class="important" on:click={bringUpSignup}>here</button></p>
+    </div>
 </div>
 
 <style>
@@ -90,10 +98,11 @@
         background: rgb(199, 199, 241);
         border: 2px solid rgb(199, 199, 241);
     }
-    .loginAlert {
+    /* .loginAlert {
         color: red;
         text-align: center;
         font-size: .8rem;
         margin-top: -1rem;
-    }
+    } */
+    .important {color: rgb(108, 108, 192);}
 </style>

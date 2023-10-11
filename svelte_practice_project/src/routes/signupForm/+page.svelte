@@ -1,6 +1,9 @@
 <script lang="ts">
 	import { createEventDispatcher } from 'svelte'
 
+    import {alertModal} from '../svelteTutorialUsers.js'
+    import {alertMessage} from '../svelteTutorialUsers.js'
+
 	const dispatch = createEventDispatcher()
 
 	// resets the inputs to empty strings
@@ -23,28 +26,28 @@
 		confirmPassword: ''
 	}
 
-    // modal variables that change the message and popup
-    let modalMessage = ''
-    let modalPopup = false
-
 	// function that will take the input values and push them up to our parent component
 	function addNewPerson() {
 		dispatch('personAdded', person)
 		resetInputs()
-		modalMessage = "Awesome, your account was created successfully!"
-        modalPopup = true
+		alertMessage.set("Awesome, your account was created successfully! Enjoy the tutorial!")
+        alertModal.set(true)
 	}
 
     // check if the passwords match
     function checkPasswords() {
         if (person.password !== person.confirmPassword) {
-            modalMessage = 'Your passwords do not match. Please try again.'
-            modalPopup = true
+            alertMessage.set("Your passwords do not match. Please try again.")
+            alertModal.set(true)
         } else {
             addNewPerson()
         }
     }
 
+    // uses store to close the messsge modal
+    function closeModal() {
+        alertModal.set(false)
+    }
 </script>
 
 
@@ -148,13 +151,13 @@
     </form>
 </div>
 
-{#if modalPopup}
-<div class="signUpModal">
-    <p class="modalMessage">{modalMessage}</p>
-    <div class="modalButtonContainer">
-        <button class="close" on:click={() => {modalPopup = false}}>Close</button>
+{#if $alertModal}
+    <div class="messageModal">
+        <p class="modalMessage">{$alertMessage}</p>
+        <div class="modalButtonContainer">
+            <button class="close" on:click={closeModal}>Close</button>
+        </div>
     </div>
-</div>
 {/if}
 
 
@@ -192,7 +195,7 @@
         background: rgb(199, 199, 241);
         border: 2px solid rgb(199, 199, 241);
     }
-    .signUpModal {
+    .messageModal {
         background: rgb(199, 199, 241);
         color:rgb(132, 132, 160);
         padding: 1rem;
@@ -201,10 +204,13 @@
         top: 30vh;
         right: 30vw;
         border-radius: 10px;
+        z-index: 3;
     }
     .modalMessage {
         border-bottom: 1px solid rgb(163, 163, 197);
         color: black;
+        text-align: center;
+        padding-bottom: 1rem;
     }
     .modalButtonContainer {width: 100%; display: flex; justify-content: center;}
     .close {
@@ -218,10 +224,6 @@
     .close:hover {
         border: 2px solid white;
         color: white;
-    }
-    .modalMessage {
-        text-align: center;
-        padding-bottom: 1rem;
     }
     /* .passwordLabel {
         font-size: .7rem;
