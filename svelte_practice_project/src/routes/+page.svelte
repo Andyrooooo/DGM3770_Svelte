@@ -21,10 +21,11 @@
 	let showEvents = false
 	let showBindings = false
 	let showSignup = false
-	let showLogin
-	onMount(() => {
+	/* let showLogin */
+	/* onMount(() => {
 		showLogin = true
-	})
+	}) */
+	let showLogin = false
 	let showLifeCycle = false
 	let showStores = false
 
@@ -91,12 +92,14 @@
 <div class:loginModalBackground={showLogin}>
 	<div class:signupModalBackground={showSignup}>
 
-		<div class="introductionPage">
-			<div class="introductionHeader">
-				<h1 class="title">DGM 3770 - Svelte</h1>
+		<div class="introductionPage flex flex-col">
+			<div class="introductionHeader p-4 inline w-full">
+				<h1 class="float-left text-slate-600">DGM 3770 - Svelte</h1>
+
 				<!-- <button on:click={() => showSignup = true} class="signIn">| Sign Up</button>
 				<button on:click={() => showLogin = true} class="signIn">Sign In | </button> -->
-				<button on:click={() => showLogin = true} class="signIn">Log Out</button>
+
+				<button on:click={() => showLogin = true} class="text-center float-right text-slate-600 font-bold hover:text-white logout">Log Out</button>
 			</div>
 
 			{#if showLogin}
@@ -105,7 +108,7 @@
 						<button on:click={() => showLogin = false} class="cancel">X</button>
 					</div> -->
 			
-					<div class="form">
+					<div class="form my-0 mx-auto">
 						<!-- these are custom events that check the login and when the signup form is clicked in the login form -->
 						<LoginForm on:checkLogin={checkTheLogin}  on:bringUpSignup={openSignup}/>
 					</div>
@@ -113,13 +116,14 @@
 			{/if}
 
 			{#if $alertModal}
-				<div class="messageModal">
-					<p class="modalMessage">{$alertMessage}</p>
-					<div class="modalButtonContainer">
-						<button class="close" on:click={closeModal}>Close</button>
+				<div class="messageModal p-4 w-vw-40 absolute top-vh-30 right-svw-30 rounded-md">
+					<p class="modalMessage text-black text-center pb-4">{$alertMessage}</p>
+					<div class="modalButtonContainer w-full flex justify-center">
+						<button class="close text-slate-500 mt-4 rounded-lg font-bold py-1.5 px-6 hover:text-white" on:click={closeModal}>Close</button>
 					</div>
 				</div>
 			{/if}
+    
 
 			{#if showSignup}
 				<div class:signupModal={showSignup}>
@@ -133,16 +137,23 @@
 				</div>
 			{/if}
 		
-			<div class="sectionButtons" class:moduleActive={showIntroduction || showReactivity || showProps || showLogic || showEvents || showBindings || showLifeCycle || showStores}>
-				<button on:click={() => showIntroduction = !showIntroduction} class:active={showIntroduction}>Introduction</button>
-				<button on:click={() => showReactivity = !showReactivity} class:active={showReactivity}>Reactivity</button>
-				<button on:click={() => showProps = !showProps} class:active={showProps}>Props</button>
-				<button on:click={() => showLogic = !showLogic} class:active={showLogic}>Logic</button>
-				<button on:click={() => showEvents = !showEvents} class:active={showEvents}>Events</button>
-				<button on:click={() => showBindings = !showBindings} class:active={showBindings}>Bindings</button>
+			<div class="flex flex-wrap justify-around m-4 gap-y-0 gap-x-3.5" class:moduleActive={showIntroduction || showReactivity || showProps || showLogic || showEvents || showBindings || showLifeCycle || showStores}>
+				<button class="py-1 px-2 rounded-bl-xl rounded-tr-xl rounded-tl-md rounded-br-md font-bold my-2 mx-0 hover:text-white" on:click={() => showIntroduction = !showIntroduction} class:active={showIntroduction}>Introduction</button>
+
+				<button class="py-1 px-2 rounded-bl-xl rounded-tr-xl rounded-tl-md rounded-br-md font-bold my-2 mx-0 hover:text-white" on:click={() => showReactivity = !showReactivity} class:active={showReactivity}>Reactivity</button>
+
+				<button class="py-1 px-2 rounded-bl-xl rounded-tr-xl rounded-tl-md rounded-br-md font-bold my-2 mx-0 hover:text-white" on:click={() => showProps = !showProps} class:active={showProps}>Props</button>
+
+				<button class="py-1 px-2 rounded-bl-xl rounded-tr-xl rounded-tl-md rounded-br-md font-bold my-2 mx-0 hover:text-white" on:click={() => showLogic = !showLogic} class:active={showLogic}>Logic</button>
+
+				<button class="py-1 px-2 rounded-bl-xl rounded-tr-xl rounded-tl-md rounded-br-md font-bold my-2 mx-0 hover:text-white" on:click={() => showEvents = !showEvents} class:active={showEvents}>Events</button>
+
+				<button class="py-1 px-2 rounded-bl-xl rounded-tr-xl rounded-tl-md rounded-br-md font-bold my-2 mx-0 hover:text-white" on:click={() => showBindings = !showBindings} class:active={showBindings}>Bindings</button>
+
 				<!-- <button on:click={() => showSignup = !showSignup} class:active={showSignup}>Signup Form</button> -->
-				<button on:click={() => showLifeCycle = !showLifeCycle} class:active={showLifeCycle}>Life Cycle</button>
-				<button on:click={() => showStores = !showStores} class:active={showStores}>Stores</button>
+				<button class="py-1 px-2 rounded-bl-xl rounded-tr-xl rounded-tl-md rounded-br-md font-bold my-2 mx-0 hover:text-white" on:click={() => showLifeCycle = !showLifeCycle} class:active={showLifeCycle}>Life Cycle</button>
+				
+				<button class="py-1 px-2 rounded-bl-xl rounded-tr-xl rounded-tl-md rounded-br-md font-bold my-2 mx-0 hover:text-white" on:click={() => showStores = !showStores} class:active={showStores}>Stores</button>
 			</div>
 		
 			<div>
@@ -179,78 +190,43 @@
 		
 		
 		<div class="introductionFooter">
-			<h1 class="footer">Andrew Kester</h1>
+			<h1 class="footer text-center py-2 px-0 w-full text-slate-600">Andrew Kester</h1>
 		</div>
-
 	</div>
 </div>
 
 
 
 <style>
-	.title {
-		color: rgb(79, 79, 79);
-		float: left;
-	}
-	.signIn {
-		text-align: center;
-		float: right;
-		color: rgb(79, 79, 79);
-		border: none;
-		padding: 0;
-		margin: 0;
-	}
-	.signIn:hover {
-		color: white;
-		border: none;
-	}
 	.introductionPage {
-		/* padding: 1rem; */
-		display: flex;
-		flex-direction: column;
 		min-height: 94.6vh;
 	}
 	.introductionHeader {
 		background: rgb(199, 199, 241);
-		padding: 1rem;
-		display: inline-block;
-		width: 100%;
 	}
 	
 	button {
-		border: 1px solid rgb(176, 176, 221);
-		padding: 5px 10px;
-		border-radius: 5px 10px;
-		font-weight: 700;
-		margin: .5rem 0;
+		border: 2px solid rgb(176, 176, 221);
 		color: rgb(176, 176, 221);
 	}
 	button:hover {
-		border: 1px solid rgb(255, 255, 255);
-		color: rgb(255, 255, 255);
+		border: 2px solid rgb(255, 255, 255);
 	}
+	.logout {
+		border: none; 
+		color:rgb(93, 93, 93);
+	}
+	.logout:hover {border: none;}
 	.active {
 		background: rgb(176, 176, 221);
-		color: rgb(79, 79, 79);
-		border: none;
-	}
-	.sectionButtons {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-around;
-		margin: 1rem;
-		gap: 0 .9rem;
+		color:rgb(93, 93, 93);
 	}
 	.moduleActive {
 		border-bottom: 1px solid rgb(93, 93, 93);
 		padding-bottom: 1rem;
 	}
 	.footer {
-		text-align: center;
 		background: rgb(199, 199, 241);
-		padding: .5rem 0;
-		width: 100%;
-		color: rgb(79, 79, 79);
 	}
 	.loginModal {
 		background: rgba(84, 84, 84, 0.95);
@@ -285,7 +261,7 @@
 		color: white;
 	}
 	.cancel:active {
-		border: none;
+		border: none; 
 	}
 	.cancelButtonContainer {
 		width: 100%;
@@ -295,38 +271,20 @@
 	} */
 	.form {
 		width: 400px;
-		margin: 0 auto;
 	}
 
 	.messageModal {
         background: rgb(199, 199, 241);
-        color:rgb(132, 132, 160);
-        padding: 1rem;
-        width: 40vw;
-        position: absolute;
-        top: 30vh;
-        right: 30vw;
-        border-radius: 10px;
 		z-index: 3;
     }
     .modalMessage {
         border-bottom: 1px solid rgb(163, 163, 197);
-        color: black;
-        text-align: center;
-        padding-bottom: 1rem;
     }
-    .modalButtonContainer {width: 100%; display: flex; justify-content: center;}
     .close {
         border: 2px solid rgb(132, 132, 160);
-        margin-top: 1rem;
-        padding: .4rem 1.5rem;
-        border-radius: 5px;
-        font-weight: 700;
-        color: rgb(132, 132, 160);
     }
     .close:hover {
         border: 2px solid white;
-        color: white;
     }
 </style>
 

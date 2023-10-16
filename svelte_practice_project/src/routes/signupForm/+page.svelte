@@ -45,26 +45,25 @@
     }
 
     // uses store to close the messsge modal
-    function closeModal() {
+   /*  function closeModal() {
         alertModal.set(false)
-    }
+    } */
 </script>
 
+<div class="bg-white p-4 text-black rounded-md mx-4 mt-14 shadow-md" on:submit={checkPasswords}>
 
-
-<div class="signupForm" on:submit={checkPasswords}>
-    <h1>Sign up</h1>
+    <h1 class="pb-1.5 mb-4 text-center uppercase">Sign up</h1>
 
     <form class="md:grid gap-4 grid-cols-3 grid-rows-2">
         <div class="">
             <label for="first-name" class="block text-sm font-medium leading-6 text-gray-900">First name*</label>
-            <div class="mt-2">
+            <div class="mt-2 mb-4">
               <input type="text" 
 			  name="first-name" 
 			  id="first-name" 
 			  autocomplete="given-name" 
               pattern="[A-Za-z]+"
-			  class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" 
+			  class="rounded-md w-full border-2 border-slate-400 p-2" 
 			  placeholder="John" 
 			  required
 			  bind:value={person.firstName}
@@ -74,13 +73,13 @@
   
         <div class="">
             <label for="last-name" class="block text-sm font-medium leading-6 text-gray-900">Last name*</label>
-            <div class="mt-2">
+            <div class="mt-2 mb-4">
                 <input type="text" 
 				name="last-name" 
 				id="last-name" 
 				autocomplete="family-name" 
                 pattern="[A-Za-z]+"
-				class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" 
+				class="rounded-md w-full border-2 border-slate-400 p-2" 
 				placeholder="e.g. Smith" 
 				required
 				bind:value={person.lastName}
@@ -90,13 +89,13 @@
   
         <div class="">
             <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Email address*</label>
-            <div class="mt-2">
+            <div class="mt-2 mb-4">
                 <input id="email" 
 				name="email" 
 				type="email" 
 				autocomplete="email" 
-                pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}"
-				class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" 
+                pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]"
+				class="rounded-md w-full border-2 border-slate-400 p-2" 
 				placeholder="john@doe.com" 
 				required
 				bind:value={person.email}
@@ -106,12 +105,12 @@
 
         <div class="">
             <label for="phone" class="block text-sm font-medium leading-6 text-gray-900">Phone Number</label>
-            <div class="mt-2">
+            <div class="mt-2 mb-4">
                 <input id="phone" 
 				name="phone" 
 				type="tel" 
                 pattern="[0-9]+"
-				class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" 
+				class="rounded-md w-full border-2 border-slate-400 p-2" 
 				placeholder="801-123-4567"
 				bind:value={person.phone}
 				>
@@ -120,11 +119,14 @@
 
         <div class="">
             <label for="password" class="block text-sm font-medium leading-6 text-gray-900">Password*</label>
-            <div class="mt-2">
+            <div class="mt-2 mb-4">
                 <input id="password" 
 				type="password" 
-				class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" 
+				class="rounded-md w-full border-2 border-slate-400 p-2" 
 				required
+                minlength="6"
+                maxlength="12"
+                pattern="[a-zA-Z0-9._%+-]+"
 				bind:value={person.password}
 				>
             </div>
@@ -132,11 +134,14 @@
 
         <div class="">
             <label for="reenterPassword" class="block text-sm font-medium leading-6 text-gray-900">Re-enter Password*</label>
-            <div class="mt-2">
+            <div class="mt-2 mb-4">
                 <input id="reenterPassword" 
 				type="password" 
-				class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" 
+				class="rounded-md w-full border-2 border-slate-400 p-2" 
 				required
+                minlength="6"
+                maxlength="12"
+                pattern="[a-zA-Z0-9._%+-]+"
 				bind:value={person.confirmPassword}
 				>
             </div>
@@ -145,86 +150,48 @@
         <div></div>
 
         <div class="container flex flex-col items-center">
-            <button class="block w-half rounded- border-0 py-1.5 submitButton">Submit</button>
+            <button class="submitButton py-1.5 px-6 rounded-lg font-bold text-slate-400 mb-4">Submit</button>
         </div>
         
     </form>
 </div>
-
+<!-- 
 {#if $alertModal}
-    <div class="messageModal">
-        <p class="modalMessage">{$alertMessage}</p>
-        <div class="modalButtonContainer">
+    <div class="messageModal p-4 absolute vw-40 top-vh-30 right-vw-30 rounded-md z-3">
+    
+        <p class="modalMessage text-black text-center pb-4">{$alertMessage}</p>
+        <div class="container flex flex-col items-center">
             <button class="close" on:click={closeModal}>Close</button>
         </div>
     </div>
-{/if}
+{/if} -->
 
 
 <style>
-    .signupForm {
-        background: white;
-        padding: 1rem;
-        color: black;
-        border-radius: 10px;
-		margin: 1rem 1rem 2rem 1rem;
-		box-shadow: 1px 1px 4px 2px rgb(34, 34, 34);
-    }
     h1 {
         border-bottom: 1px solid rgb(221, 221, 221);
-        padding-bottom: 5px;
-        margin-bottom: 1rem;
-        text-align: center;
-        text-transform: uppercase;
-    }
-    input {
-        padding-left: 10px;
-        padding-right: 10px;
-        margin-bottom: 1rem;
     }
     .submitButton {
         border: 2px solid rgb(132, 132, 160);
-        margin-top: 1rem;
-        padding: .4rem 1.5rem;
-        border-radius: 5px;
-        font-weight: 700;
-        color: rgb(132, 132, 160);
-		margin-bottom: 1rem;
     }
     .submitButton:hover {
         background: rgb(199, 199, 241);
         border: 2px solid rgb(199, 199, 241);
     }
-    .messageModal {
+    /* .messageModal {
         background: rgb(199, 199, 241);
         color:rgb(132, 132, 160);
-        padding: 1rem;
-        width: 40vw;
-        position: absolute;
-        top: 30vh;
-        right: 30vw;
-        border-radius: 10px;
-        z-index: 3;
     }
     .modalMessage {
         border-bottom: 1px solid rgb(163, 163, 197);
-        color: black;
-        text-align: center;
-        padding-bottom: 1rem;
     }
-    .modalButtonContainer {width: 100%; display: flex; justify-content: center;}
     .close {
         border: 2px solid rgb(132, 132, 160);
-        margin-top: 1rem;
-        padding: .4rem 1.5rem;
-        border-radius: 5px;
-        font-weight: 700;
-        color: rgb(132, 132, 160);
     }
     .close:hover {
         border: 2px solid white;
         color: white;
-    }
+    } */
     /* .passwordLabel {
         font-size: .7rem;
         margin-top: -1rem;
