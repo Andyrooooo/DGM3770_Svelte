@@ -12,7 +12,7 @@
     import Bindings from './storeBindings.svelte'
 </script>
     
-<div class="stores">
+<div class="mx-4 mt-4 mb-8 shadow-md rounded-md">
     <Writeable />
 
     <Auto />
@@ -25,11 +25,3 @@
 
     <Bindings />
 </div>
-
-<style>
-    .stores {
-        margin: 1rem 1rem 2rem 1rem;
-        box-shadow: 1px 1px 4px 2px rgb(34, 34, 34);
-        border-radius: 10px;
-    }
-</style>

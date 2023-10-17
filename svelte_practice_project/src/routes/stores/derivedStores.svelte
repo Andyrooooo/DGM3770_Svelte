@@ -10,10 +10,10 @@
 </script>
     
 
-<div class="derived">
+<div class="derived text-black p-4">
     <h1 class="derivedTitle">Derived Stores</h1>
 
-    <p class="description">In this example, we use <a class="important">Derived stores</a> to display the time our page has been open</p>
+    <p class="description">In this example, we use <a class="important mb-4">Derived stores</a> to display the time our page has been open</p>
     
     <h1>The time is {formatter.format($time)}</h1>
 
@@ -24,16 +24,11 @@
 <style>
     .derived {
         background: rgb(92, 92, 92);
-        color: black;
-        padding: 1rem;
     }
     .derivedTitle {
         border-bottom: 1px solid rgb(126, 126, 126);
     }
     .important {
         color: rgb(104, 104, 226);
-    }
-    .description {
-        margin-bottom: 1rem;
     }
 </style>

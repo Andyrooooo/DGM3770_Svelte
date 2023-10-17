@@ -21,11 +21,10 @@
 	let showEvents = false
 	let showBindings = false
 	let showSignup = false
-	/* let showLogin */
-	/* onMount(() => {
+	let showLogin
+	onMount(() => {
 		showLogin = true
-	}) */
-	let showLogin = false
+	})
 	let showLifeCycle = false
 	let showStores = false
 

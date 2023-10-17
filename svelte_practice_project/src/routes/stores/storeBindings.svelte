@@ -6,25 +6,25 @@
     
 
 
-<div class="binding">
+<div class="bg-black p-4 rounded-bl-md rounded-br-md">
     <h1 class="bindingTitle">Store Bindings</h1>
 
-    <p class="description">In this example, we can add and delete "users" from our user list using <a class="important">Custom stores</a></p>
+    <p class="mb-4">In this example, we can add and delete "users" from our user list using <a class="important">Custom stores</a></p>
 
     <label>Please enter your name</label>
-    <input class="inputName" bind:value={$name} />
-    <div class="buttonContainer">
-        <button class="submitButton" on:click={() => modal = true}>Submit</button>
+    <input class="w-full p-2 text-black" bind:value={$name} />
+    <div class="flex justify-center">
+        <button class="submitButton py-2 px-4 mt-2 rounded-lg" on:click={() => modal = true}>Submit</button>
     </div>
     
 
     {#if modal} 
-    <div class="modalContainer">
-        <h2>Greetings!</h2>
-        <p class="greetingMessage">{$greeting}</p>
+    <div class="modalContainer bg-white fixed w-3/4 top-2/4 p-4 rounded-md shadow-md">
+        <h2 class="text-black text-2xl text-center mb-8">Greetings!</h2>
+        <p class="greetingMessage text-black text-center">{$greeting}</p>
 
-        <div class="buttonContainer">
-            <button class="closeButton" on:click={() => modal = false}>Close</button>
+        <div class="flex justify-center">
+            <button class="closeButton text-black py-2 px-4 rounded-lg mt-2" on:click={() => modal = false}>Close</button>
         </div>
     </div>
     {/if}
@@ -33,69 +33,30 @@
 
 
 <style>
-    .binding {
-        background: rgb(0, 0, 0);
-        padding: 1rem;
-        border-bottom-left-radius: 10px;
-        border-bottom-right-radius: 10px;
-    }
     .bindingTitle {
         border-bottom: 1px solid rgb(126, 126, 126);
     }
     .important {
         color: rgb(104, 104, 226);
     }
-    .description {
-        margin-bottom: 1rem;
-    }
-    .inputName {
-        width: 100%;
-        padding: .5rem 5px;
-        color: black;
-    }
-    .buttonContainer {
-        display: flex;
-        justify-content: center;
-    }
     .submitButton {
         border: 2px solid rgb(104, 104, 226);
-        padding: .5rem 1rem;
-        margin-top: 5px;
-        border-radius: 10px;
         color:rgb(104, 104, 226);
     }
+    
     .submitButton:hover {
         background: rgb(104, 104, 226);
         color: white;
     }
     .modalContainer {
-        background: white;
-        position: fixed;
-        width: 75%;
         margin: 0 12.5%;
-        top: 50%;
-        padding: 1rem;
-        border-radius: 10px;
-        box-shadow: 1px 1px 4px black;
     }
     .greetingMessage {
-        color: black;
         border-bottom: 1px solid rgb(220, 220, 220);
-        text-align: center;
-    }
-    h2 {
-        color: black;
-        font-size: 2rem;
-        text-align: center;
-        margin-bottom: 2rem;
     }
     .closeButton {
-        color: black;
         border: 2px solid rgb(104, 104, 226);
         color:rgb(104, 104, 226);
-        padding: .5rem 1rem;
-        border-radius: 10px;
-        margin-top: .5rem;
     }
     .closeButton:hover {
         background: rgb(104, 104, 226);

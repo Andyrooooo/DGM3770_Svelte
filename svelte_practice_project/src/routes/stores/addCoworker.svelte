@@ -34,44 +34,27 @@
     
 </script>
 
-<form on:submit={addCoworker}>
-    <input type="text" placeholder="name" bind:value={newName}>
-    <input type="number" placeholder="age" bind:value={newAge}>
-    <input type="text" placeholder="position" bind:value={newPosition}>
-    <div class="addBTNContainer">
-        <button type="submit">Add</button>
+<form class="flex justify-between mb-4 flex-wrap" on:submit={addCoworker}>
+    <input class="p-2 rounded-md mb-2" type="text" placeholder="name" bind:value={newName}>
+    <input class="p-2 rounded-md mb-2" type="number" placeholder="age" bind:value={newAge}>
+    <input class="p-2 rounded-md mb-2" type="text" placeholder="position" bind:value={newPosition}>
+    <div class="flex justify-center basis-full">
+        <button class="rounded-lg p-2 hover:text-white" type="submit">Add</button>
     </div>
 </form>
 
 
 <style>
-    form {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 1rem;
-        flex-wrap: wrap;
-    }
     input {
         border: 2px solid rgb(112, 112, 112);
-        padding: .5rem;
-        border-radius: 5px;
-        margin-bottom: .5rem;
         width: 32%;
     }
     button {
         border: 2px solid rgb(166, 166, 232);
-        border-radius: 10px; 
         color:rgb(166, 166, 232);
-        padding: .5rem;
         width: 20%;
         }
     button:hover {
         background:rgb(166, 166, 232);
-        color: white;
-    }
-    .addBTNContainer {
-        flex-basis: 100%;
-        display: flex;
-        justify-content: center;
     }
 </style>
