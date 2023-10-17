@@ -29,31 +29,36 @@ afterUpdate(() => {
 
 <!-- 346px height -->
 
-<div class="beforeAfter">
-    <h1 class="beforeAfterTitle">BeforeUpdate and afterUpdate</h1>
+<div class="beforeAfter text-black p-4">
+    <h1 class="beforeAfterTitle text-black">BeforeUpdate and afterUpdate</h1>
 
-    <p class="description">In here we use <a class="important">beforeUpdate</a> and <a class="important">afterUpdate</a> to show us how many todos we have before and after we add a new todo</p>
+    <p class="mb-8">In here we use <a class="important">beforeUpdate</a> and <a class="important">afterUpdate</a> to show us how many todos we have before and after we add a new todo</p>
 
     <form on:submit={addNewTodo}>
         <label for="name">Add Todo</label>
-        <input type="text" class="name" name="name" bind:value={name}/>
+        <input type="text" class="box-border w-full py-4 px-2 rounded-md mt-.5 mb-4 mx-0" name="name" bind:value={name}/>
 
-        <div class="BTNContainer">
-            <input type="submit" value="+" class="addBTN" />
+        <!--         box-sizing: border-box;
+        width: 100%;
+        padding: 1rem .5rem 1rem .5rem;
+        border-radius: 10px;
+        margin: 5px 0 1rem 0; -->
+
+        <div class="BTNContainer flex justify-center">
+            <input type="submit" value="+" class="addBTN rounded-lg cursor-pointer" />
         </div>
     </form>
 
     <label>Your todo list</label>
 
-    <div class="todoCount">
-        <p class="message">{after}</p>
-        <p class="message">{before}</p>
+    <div class="todoCount flex justify-around rounded-tr-md rounded-tl-md py-1 px-0">
+        <p class="text-white">{after}</p>
+        <p class="text-white">{before}</p>
     </div>
 
-
-    <ul class="todoList">
+    <ul class="bg-white p-2">
         {#each todos as todo}
-        <li class="todo" >{todo}</li>
+        <li class="text-slate-600" >{todo}</li>
         {/each}
     </ul>
 
@@ -64,56 +69,25 @@ afterUpdate(() => {
 <style>
     .beforeAfter {
         background: rgb(181, 181, 181);
-        padding: 1rem;
-        color: black;
     }
     .beforeAfterTitle {
-        color: black;
         border-bottom: 1px solid rgb(154, 154, 154);
     }
-    .description {
-        margin-bottom: 2rem;
-    }
-    .name {
-        box-sizing: border-box;
-        width: 100%;
-        padding: 1rem .5rem 1rem .5rem;
-        border-radius: 10px;
-        margin: 5px 0 1rem 0;
-    }
-    .BTNContainer {
-        display: flex;
-        justify-content: center;
-    }
+    
     .addBTN {
-        border: 2px solid rgb(166, 166, 232);
-        color: rgb(166, 166, 232);
-        border-radius: 10px;
+        border: 2px solid rgb(122, 122, 226);
+        color: rgb(122, 122, 226);
         padding: .25rem 1.5rem .75rem 1.5rem;
-        cursor: pointer;
         font-size: 2rem;
     }
     .addBTN:hover {
-        background: rgb(166, 166, 232);
+        background: rgb(122, 122, 226);
         color: rgb(79, 79, 79);
     }
-    .todoList {
-        background: rgb(255, 255, 255);
-        padding: .5rem;
-    }
-    .todo {
-        color: rgb(111, 111, 111);
-    }
     .todoCount {
-        display: flex;
-        justify-content: space-around;
         background-color: rgb(114, 114, 114);
-        border-top-right-radius: 10px;
-        border-top-left-radius: 10px;
-        padding: 5px 0;
     }
-    .message {color: rgb(255, 255, 255);}
     .important {
-        color: rgb(137, 137, 238);
+        color: rgb(122, 122, 226);
     }
 </style>

@@ -17,17 +17,17 @@
  
  <!-- 346px height -->
  
-<div class="tick">
+<div class="tick p-4 rounded-br-md rounded-bl-md">
     <h1 class="tickTitle">Tick</h1>
 
-    <p class="description">In this example we use the <a class="important">tick</a> function to help us grab a new Starwars vehicle name at random</p>
+    <p class="mb-8">In this example we use the <a class="important">tick</a> function to help us grab a new Starwars vehicle name at random</p>
 
-    <div class="buttonConatiner">
-        <button class="vehicleBTN" on:click={addStarWarsVehicles}>Get Random Vehicle</button>
+    <div class="flex justify-center">
+        <button class="vehicleBTN py-2 px-4 rounded-md" on:click={addStarWarsVehicles}>Get Random Vehicle</button>
     </div>
 
-    <div class="nameContainer">
-        <p class="name">{randomVehicleName}</p>
+    <div class="nameContainer bg-white p-4 mt-4">
+        <p class="text-center text-black">{randomVehicleName}</p>
     </div>
 
 </div>
@@ -36,15 +36,9 @@
 <style>
     .tick {
         background: rgb(129, 129, 129);
-        padding: 1rem;
-        border-bottom-right-radius: 10px;
-        border-bottom-left-radius: 10px;
     }
     .tickTitle {
     border-bottom: 1px solid rgb(147, 147, 147);
-    }
-    .description {
-        margin-bottom: 2rem;
     }
 
     .important {
@@ -52,26 +46,11 @@
     }
 
     .vehicleBTN {
-        padding: .5rem 1rem;
         color: rgb(183, 183, 229);
         border: 2px solid rgb(183, 183, 229);
-        border-radius: 10px;
     }
     .vehicleBTN:hover {
         background: rgb(183, 183, 229);
         color: rgb(79, 79, 79);
-    }
-    .buttonConatiner {
-        display: flex;
-        justify-content: center;
-    }
-    .nameContainer {
-        background: white;
-        padding: 1rem;
-        margin-top: 1rem;
-    }
-    .name {
-        text-align: center;
-        color: black;
     }
 </style>
