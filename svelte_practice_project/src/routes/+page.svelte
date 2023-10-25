@@ -9,6 +9,7 @@
 	import LoginForm from './loginComponent/+page.svelte'
 	import LifeCycle from './lifecycle/+page.svelte'
 	import Stores from './stores/+page.svelte'
+	import Motion from './motion/+page.svelte'
 	import { persons } from './svelteTutorialUsers.js'
 	import { alertModal } from './svelteTutorialUsers.js'
 	import { alertMessage } from './svelteTutorialUsers.js'
@@ -21,12 +22,13 @@
 	let showEvents = false
 	let showBindings = false
 	let showSignup = false
-	let showLogin
-	onMount(() => {
+	let showLogin = false
+	/* onMount(() => {
 		showLogin = true
-	})
+	}) */
 	let showLifeCycle = false
 	let showStores = false
+	let showMotion = false
 
 	const addingNewPerson = async (event) => {
 		// data passed up from the signup form component using a custom event
@@ -98,7 +100,7 @@
 				<!-- <button on:click={() => showSignup = true} class="signIn">| Sign Up</button>
 				<button on:click={() => showLogin = true} class="signIn">Sign In | </button> -->
 
-				<button on:click={() => showLogin = true} class="text-center float-right text-slate-600 font-bold hover:text-white logout">Log Out</button>
+				<button on:click={() => showLogin = true} class="text-center float-right text-slate-600 font-bold logout">Log Out</button>
 			</div>
 
 			{#if showLogin}
@@ -136,7 +138,7 @@
 				</div>
 			{/if}
 		
-			<div class="flex flex-wrap justify-around m-4 gap-y-0 gap-x-3.5" class:moduleActive={showIntroduction || showReactivity || showProps || showLogic || showEvents || showBindings || showLifeCycle || showStores}>
+			<div class="flex flex-wrap justify-around m-4 gap-y-0 gap-x-3.5" class:moduleActive={showIntroduction || showReactivity || showProps || showLogic || showEvents || showBindings || showLifeCycle || showStores || showMotion}>
 				<button class="py-1 px-2 rounded-bl-xl rounded-tr-xl rounded-tl-md rounded-br-md font-bold my-2 mx-0 hover:text-white" on:click={() => showIntroduction = !showIntroduction} class:active={showIntroduction}>Introduction</button>
 
 				<button class="py-1 px-2 rounded-bl-xl rounded-tr-xl rounded-tl-md rounded-br-md font-bold my-2 mx-0 hover:text-white" on:click={() => showReactivity = !showReactivity} class:active={showReactivity}>Reactivity</button>
@@ -153,6 +155,8 @@
 				<button class="py-1 px-2 rounded-bl-xl rounded-tr-xl rounded-tl-md rounded-br-md font-bold my-2 mx-0 hover:text-white" on:click={() => showLifeCycle = !showLifeCycle} class:active={showLifeCycle}>Life Cycle</button>
 				
 				<button class="py-1 px-2 rounded-bl-xl rounded-tr-xl rounded-tl-md rounded-br-md font-bold my-2 mx-0 hover:text-white" on:click={() => showStores = !showStores} class:active={showStores}>Stores</button>
+
+				<button class="py-1 px-2 rounded-bl-xl rounded-tr-xl rounded-tl-md rounded-br-md font-bold my-2 mx-0 hover:text-white" on:click={() => showMotion = !showMotion} class:active={showMotion}>Motion</button>
 			</div>
 		
 			<div>
@@ -182,6 +186,9 @@
 				{/if}
 				{#if showStores}
 					<Stores />
+				{/if}
+				{#if showMotion}
+					<Motion />
 				{/if}
 			</div>
 		
@@ -215,7 +222,10 @@
 		border: none; 
 		color:rgb(93, 93, 93);
 	}
-	.logout:hover {border: none;}
+	.logout:hover {
+		color: white;
+		border: none; 
+	}
 	.active {
 		background: rgb(176, 176, 221);
 		color:rgb(93, 93, 93);

@@ -14,6 +14,9 @@ module.exports = {
 			spacing: {
 				'vh-30': '30vh',
 				'svw-30': '30vw'
+			},
+			colors: {
+				'btn-border': 'rgb(104, 104, 226)'
 			}
 		},
 	},
