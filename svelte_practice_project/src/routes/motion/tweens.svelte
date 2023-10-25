@@ -50,7 +50,7 @@
         {/if}
 
         {#if !jokeAnswer}
-        <button class="jokeBTN text-btn-border py-2 px-4 rounded-lg" on:click={grabJoke}>Grab a Joke</button>
+        <button class="jokeBTN py-2 px-4 rounded-lg" on:click={grabJoke}>Grab a Joke</button>
         {/if}
 
         <button class="jokeAnswer py-2 px-4 rounded-lg" on:click={() => jokeAnswer = true}>Get Answer</button>
@@ -87,6 +87,7 @@ progress {
 
 .jokeBTN {
     border: 2px solid rgb(104, 104, 226);
+    color: rgb(104, 104, 226);
 }
 .jokeBTN:hover {
     background: rgb(104, 104, 226);

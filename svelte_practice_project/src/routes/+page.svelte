@@ -10,6 +10,7 @@
 	import LifeCycle from './lifecycle/+page.svelte'
 	import Stores from './stores/+page.svelte'
 	import Motion from './motion/+page.svelte'
+	import Transitions from './transitions/+page.svelte'
 	import { persons } from './svelteTutorialUsers.js'
 	import { alertModal } from './svelteTutorialUsers.js'
 	import { alertMessage } from './svelteTutorialUsers.js'
@@ -29,6 +30,7 @@
 	let showLifeCycle = false
 	let showStores = false
 	let showMotion = false
+	let showTransitions = false
 
 	const addingNewPerson = async (event) => {
 		// data passed up from the signup form component using a custom event
@@ -138,7 +140,7 @@
 				</div>
 			{/if}
 		
-			<div class="flex flex-wrap justify-around m-4 gap-y-0 gap-x-3.5" class:moduleActive={showIntroduction || showReactivity || showProps || showLogic || showEvents || showBindings || showLifeCycle || showStores || showMotion}>
+			<div class="flex flex-wrap justify-around m-4 gap-y-0 gap-x-3.5" class:moduleActive={showIntroduction || showReactivity || showProps || showLogic || showEvents || showBindings || showLifeCycle || showStores || showMotion || showTransitions}>
 				<button class="py-1 px-2 rounded-bl-xl rounded-tr-xl rounded-tl-md rounded-br-md font-bold my-2 mx-0 hover:text-white" on:click={() => showIntroduction = !showIntroduction} class:active={showIntroduction}>Introduction</button>
 
 				<button class="py-1 px-2 rounded-bl-xl rounded-tr-xl rounded-tl-md rounded-br-md font-bold my-2 mx-0 hover:text-white" on:click={() => showReactivity = !showReactivity} class:active={showReactivity}>Reactivity</button>
@@ -157,6 +159,8 @@
 				<button class="py-1 px-2 rounded-bl-xl rounded-tr-xl rounded-tl-md rounded-br-md font-bold my-2 mx-0 hover:text-white" on:click={() => showStores = !showStores} class:active={showStores}>Stores</button>
 
 				<button class="py-1 px-2 rounded-bl-xl rounded-tr-xl rounded-tl-md rounded-br-md font-bold my-2 mx-0 hover:text-white" on:click={() => showMotion = !showMotion} class:active={showMotion}>Motion</button>
+				
+				<button class="py-1 px-2 rounded-bl-xl rounded-tr-xl rounded-tl-md rounded-br-md font-bold my-2 mx-0 hover:text-white" on:click={() => showTransitions = !showTransitions} class:active={showTransitions}>Transitions</button>
 			</div>
 		
 			<div>
@@ -189,6 +193,9 @@
 				{/if}
 				{#if showMotion}
 					<Motion />
+				{/if}
+				{#if showTransitions}
+					<Transitions />
 				{/if}
 			</div>
 		
@@ -296,16 +303,6 @@
         border: 2px solid white;
     }
 </style>
-
-
-<!-- <p>The introduction tutorial will be located <a href="/introduction" class="link">here.</a></p>
-<p>The reactivity tutorial will be located <a href="/reactivity" class="link">here.</a></p>
-<p>The props tutorial will be located <a href="/props" class="link">here.</a></p>
-<p>The logic tutorial will be located <a href="/logic" class="link">here.</a></p>
-<p>The Events tutorial will be located <a href="/events" class="link">here.</a></p>
-<p>The Bindings tutorial will be located <a href="/bindings" class="link">here.</a></p> -->
-
-<!-- dont forget when you add <script lang="ts"><script> -->
 
 
 	<!-- {#if showIntroduction}
