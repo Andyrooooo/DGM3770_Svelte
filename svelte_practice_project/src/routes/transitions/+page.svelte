@@ -6,6 +6,8 @@
     import JSTransitions from './customJSTransitions.svelte'
 
     import TEvents from './transitionEvents.svelte'
+
+    import Global from './globalTransitions.svelte'
 </script>
 
 
@@ -14,4 +16,5 @@
     <CSSTransitions />
     <JSTransitions />
     <TEvents />
+    <Global />
 </div>
