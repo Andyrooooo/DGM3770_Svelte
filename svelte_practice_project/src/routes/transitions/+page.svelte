@@ -4,6 +4,8 @@
     import CSSTransitions from './customCSSTransitions.svelte'
 
     import JSTransitions from './customJSTransitions.svelte'
+
+    import TEvents from './transitionEvents.svelte'
 </script>
 
 
@@ -11,4 +13,5 @@
     <InOut />
     <CSSTransitions />
     <JSTransitions />
+    <TEvents />
 </div>
