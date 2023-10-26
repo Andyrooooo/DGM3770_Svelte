@@ -5,7 +5,7 @@
 
 
 <div class="hover:shadow-lg bg-slate-100 text-black p-2 rounded-lg">
-    <h1 class="inOutTitle">In and Out</h1>
+    <h1 class="inOutTitle text-btn-border">In and Out</h1>
 
     <label>
         <input type="checkbox" bind:checked={visible} />

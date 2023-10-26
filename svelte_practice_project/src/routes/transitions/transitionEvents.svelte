@@ -8,7 +8,7 @@
 
 <div class="hover:shadow-lg bg-slate-100 text-black p-2 rounded-lg mt-4">
 
-    <h1 class="transitionsTitle">Transition Events</h1>
+    <h1 class="transitionsTitle text-btn-border">Transition Events</h1>
     
     <p>status: {status}</p>
 

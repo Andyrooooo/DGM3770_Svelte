@@ -1,5 +1,5 @@
 <script>
-    import { tweened, spring } from 'svelte/motion'
+    import { tweened } from 'svelte/motion'
 	import { cubicOut } from 'svelte/easing'
 
 	const progress = tweened(0, {
@@ -41,7 +41,7 @@
 
 <div class="hover:shadow-lg bg-slate-100 text-black p-2 rounded-lg">
 
-    <h1 class="tweenTitle">Tweens</h1>
+    <h1 class="tweenTitle text-btn-border">Tweens</h1>
     <p>In this example we use <a class="text-btn-border">Tween</a> to show us the progress bar when the API is loading for our random joke.</p>
 
     <div class="flex justify-between mt-2">
@@ -74,6 +74,8 @@
     </div>
     {/if}
 </div>
+
+<p class="text-black">We have to add in more details like the examples from class, we also have to update the readME file</p>
 
 
 <style>

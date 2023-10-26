@@ -25,7 +25,7 @@
 
 <div class="hover:shadow-lg bg-slate-100 text-black p-2 rounded-lg mt-4">
 
-    <h1 class="transitionsTitle">Custom CSS transitions</h1>
+    <h1 class="transitionsTitle text-btn-border">Custom CSS transitions</h1>
     
     <label>
         <input type="checkbox" bind:checked={visible} />
