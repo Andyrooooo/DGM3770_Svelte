@@ -2,6 +2,7 @@
 
     import { flip } from 'svelte/animate'
 
+    // choices array with the colors
     let choices = [
             {color: 'red', modal: 'redModal', id: 1},
             {color: 'orange', modal: 'orangeModal', id: 2},
@@ -13,9 +14,12 @@
             {color: 'black', modal: 'blackModal', id: 8}
         ]
 
+        // deletes the modal from the array
     function deleteModal(id) {
         choices = choices.filter(choice => choice.id !== id)
     }
+
+    // choices array with the colors for the reset function
     function resetModals() {
         choices = [
             {color: 'red', modal: 'redModal', id: 1},
