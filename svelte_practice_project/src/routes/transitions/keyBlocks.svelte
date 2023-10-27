@@ -18,7 +18,7 @@
 </script>
 
 
-<div class="hover:shadow-lg bg-slate-100 text-black p-2 rounded-lg mt-4 h-28">
+<div class="hover:shadow-lg bg-slate-200 text-black p-2 rounded-lg mt-4 h-28">
 
     <h1 class="KBTitle mb-4 text-btn-border">Key Blocks</h1>
     

@@ -7,7 +7,7 @@
 </script>
 
 
-<div class="hover:shadow-lg bg-slate-100 text-black p-2 rounded-lg mt-4">
+<div class="hover:shadow-lg bg-slate-200 text-black p-2 rounded-lg mt-4">
 
     <h1 class="transitionsTitle text-btn-border">Global Transitions</h1>
     
@@ -34,6 +34,6 @@
     .transitionsTitle {border-bottom: 1px solid rgb(193, 193, 193);}
 
     .slide {
-		border-top: 1px solid #eee;
+		border-top: 1px solid #c2c2c2;
 	}
 </style>

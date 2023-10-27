@@ -11,6 +11,8 @@
 
     import KeyBlocks from './keyBlocks.svelte'
 
+    import Slide from './slide.svelte'
+
     import MyInOut from './myInOut.svelte'
 </script>
 
@@ -25,5 +27,6 @@
     <KeyBlocks />
 
     <h1 class="text-black my-4 text-center">My Svelte tutorial examples</h1>
+    <Slide />
     <MyInOut />
 </div>
