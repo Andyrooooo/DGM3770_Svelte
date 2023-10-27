@@ -34,7 +34,7 @@
             progress.set(0)
             jokeQuestion = true
             progressBar = false
-        }, 1000)
+        }, 2000)
     }
 </script>
 
@@ -85,6 +85,7 @@
 progress {
     display: block;
     width: 100%;
+    background: black;
 }
 
 .jokeBTN {

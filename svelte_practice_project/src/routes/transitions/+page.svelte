@@ -32,6 +32,4 @@
     <Slide />
     <Fly />
     <Fade />
-
-    <!-- <p>next we'll do something with the modal, probably using visible and invisible</p> -->
 </div>
