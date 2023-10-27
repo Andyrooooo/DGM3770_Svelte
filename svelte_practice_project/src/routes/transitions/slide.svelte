@@ -13,7 +13,7 @@
 
 <div class="hover:shadow-lg bg-slate-200 text-black p-2 rounded-lg mt-4">
 
-    <h1 class="transitionsTitle text-btn-border">Transition 1: Dropdown menu</h1>
+    <h1 class="transitionsTitle text-btn-border">Transition 1: Sliding Dropdown menu</h1>
 
     <p>For this component we have a mockup dropdown menu of the Svelte menu, the dropdown does not actually have any links or perform anything within the list but showcases the <a class="text-btn-border">Slide</a> transition effect. We use something similar to the <a class="text-btn-border">Global Transitions</a> section but without there being a global transition</p>
     

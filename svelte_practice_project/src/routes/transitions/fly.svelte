@@ -61,15 +61,15 @@
 </script>
 
 
-<div class="hover:shadow-lg bg-slate-200 text-black p-2 rounded-lg mt-4 container">
+<div class="hover:shadow-lg bg-slate-200 text-black p-2 rounded-lg mt-4 fly">
 
-    <h1 class="transitionsTitle text-btn-border">Transition 2: In and Out</h1>
+    <h1 class="transitionsTitle text-btn-border">Transition 2: Flying Carousel</h1>
 
     <p>For this component we use the <a class="text-btn-border">fly</a> transition effect. The fly transition allows us to get a great effect like the carousel below. Wait you can't see it? That's because it's not there yet! Click the button below to open the carousel and see the images fly in!</p>
 
     <div class="flex justify-center my-2">
         <button 
-            class="px-4 py-2 text-btn-border rounded-lg opClBTN"
+            class="px-6 py-2 text-btn-border rounded-lg opClBTN"
             on:click={openCloseSlide}>
             <!-- Helps us change the text in the button -->
             {#if slideClicked}
@@ -81,7 +81,7 @@
     </div>
 
     {#if slideClicked}
-        <div class="bg-slate-300 p-4 rounded-md max-w-sm mx-auto mt-4" transition:fly="{{ x: 400, duration: 750}}">
+        <div class="bg-white p-4 rounded-md max-w-sm mx-auto mt-4" transition:fly="{{ x: 400, duration: 750}}">
             <!-- A forEach that splits up the images, starts at 0 and ends at 1 -->
             {#each images.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage) as image}
 
@@ -93,7 +93,7 @@
                     />
                 </div>
 
-                <div class="border-slate-400 border-t-2 mt-3 pt-2"></div>
+                <div class="border-gray-200 border-t-2 mt-3 pt-2"></div>
             {/each} 
             <!-- We do the same here with slice and same variables but changes the text -->
             {#each texts.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage) as text}
@@ -107,7 +107,7 @@
         <div class="flex justify-center m-2" transition:fly="{{ x: 400, duration: 1250}}">
             <button 
                 on:click={prevPage}
-                class="fa-solid fa-chevron-left text-btn-border text-xl bg-slate-300 rounded-3xl py-1 px-3 mr-4 arrowBTN">
+                class="fa-solid fa-chevron-left text-btn-border text-xl bg-white rounded-3xl py-1 px-3 mr-4 arrowBTN">
             </button>
 
                 <p class="text-md pt-2">
@@ -118,7 +118,7 @@
                 
             <button 
                 on:click={nextPage}
-                class="fa-solid fa-chevron-right text-btn-border text-xl bg-slate-300 rounded-3xl py-1 px-3 ml-4 arrowBTN">
+                class="fa-solid fa-chevron-right text-btn-border text-xl bg-white rounded-3xl py-1 px-3 ml-4 arrowBTN">
             </button>
         </div>
     {/if}
@@ -138,7 +138,7 @@
         background:rgb(104, 104, 226);
         color: white;
     }
-    .container {
-        height: 33rem;
+    .fly {
+        height: 34rem;
     }
 </style>

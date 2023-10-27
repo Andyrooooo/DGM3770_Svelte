@@ -13,7 +13,9 @@
 
     import Slide from './slide.svelte'
 
-    import MyInOut from './myInOut.svelte'
+    import Fly from './fly.svelte'
+
+    import Fade from './fade.svelte'
 </script>
 
 
@@ -28,5 +30,8 @@
 
     <h1 class="text-black my-4 text-center">My Svelte tutorial examples</h1>
     <Slide />
-    <MyInOut />
+    <Fly />
+    <Fade />
+
+    <!-- <p>next we'll do something with the modal, probably using visible and invisible</p> -->
 </div>
