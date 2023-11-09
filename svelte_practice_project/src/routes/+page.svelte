@@ -74,19 +74,14 @@
 				<div class="introductionHeader relative p-4 inline w-full">
 					<h1 class="float-left text-slate-600 mt-2">DGM 3770 - Svelte</h1>
 
-					<!-- <button on:click={() => showSignup = true} class="signIn">| Sign Up</button>
-					<button on:click={() => showLogin = true} class="signIn">Sign In | </button> -->
-
-					<!-- <button on:click={() => showLogin = true} class="text-center float-right text-slate-600 font-bold logout">Log Out</button> -->
-
-					<!-- If the user is signed in then it will show their avatar picture -->
+					<!---------------------- If the user is signed in then it will show their avatar picture ---------------------------->
 					{#if $page.data.session?.user}
 						<button on:click={toggleAuthMenu} class="float-right rounded-full w-10 h-10 hover:ring-4 hover:ring-btn-border avatarMenuBTN">
 							<img src={$page.data.session.user.image} class="rounded-full" alt="user avatar"/>
 						</button>
 					{/if}
 
-					<!-- OAuth menu -->
+					<!--------------------------------------------- OAUTH MENU ---------------------------------------------------------->
 					{#if authMenu}
 						<div class="absolute ring-1 ring-btn-border w-52 right-4 top-16 px-4 py-2 rounded-md avatarMenu">
 							<p class="text-btn-border text-right w-full">{$page.data.session.user.email}</p>
@@ -399,6 +394,13 @@
 		}
 
 	} */
+
+	<button on:click={() => showSignup = true} class="signIn">| Sign Up</button>
+					<button on:click={() => showLogin = true} class="signIn">Sign In | </button> -->
+
+					<!-- <button on:click={() => showLogin = true} class="text-center float-right text-slate-600 font-bold logout">Log Out</button>
+
+
 
 	/* // function that will open the signup form component
 	let openSignup = async () => {
