@@ -3,7 +3,7 @@
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {
-		"dev": "vite dev",
+		"dev": "vite dev --port 3770",
 		"build": "vite build",
 		"preview": "vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
@@ -35,6 +35,8 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@auth/core": "^0.18.0",
+		"@auth/sveltekit": "^0.3.11",
 		"svelte-spa-router": "^3.3.0"
 	}
 }

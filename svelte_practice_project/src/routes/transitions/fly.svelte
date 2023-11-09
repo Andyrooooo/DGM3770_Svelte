@@ -16,16 +16,16 @@
 
     // array of text to change with the images
     let texts = [
-        "Particles and Waves", 
-        "Study Art",
-        "Tree",
-        "Forest",
-        "Computer Art",
-        "Computer Graduate",
-        "Snail",
-        "Planets and Stars",
-        "Astronaut" ,
-        "Robot",
+        "Pixabay Art 1", 
+        "Pixabay Art 2",
+        "Pixabay Art 3",
+        "Pixabay Art 4",
+        "Pixabay Art 5",
+        "Pixabay Art 6",
+        "Pixabay Art 7",
+        "Pixabay Art 8",
+        "Pixabay Art 9" ,
+        "Pixabay Art 10",
     ]
 
     // fetches the images from the pixabay API

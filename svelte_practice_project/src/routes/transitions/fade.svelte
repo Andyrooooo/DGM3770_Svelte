@@ -35,7 +35,7 @@
     .transitionsTitle {border-bottom: 1px solid rgb(193, 193, 193);}
     .modalPopup {
         position: fixed;
-        top: 24.5rem;
+        top: 40%;
         z-index: 9;
         width: 60%;
         right: 20%;
