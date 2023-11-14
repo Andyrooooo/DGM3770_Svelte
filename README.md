@@ -20,3 +20,6 @@
 
 ### Animations
 #### The parent component containing my animation component will be located here [Animation Parent component](https://github.com/Andyrooooo/DGM3770_Svelte/blob/master/svelte_practice_project/src/routes/animations/%2Bpage.svelte) and can be seen on the landing page by clicking the "animations" button. The child component will be located here [Animation component](https://github.com/Andyrooooo/DGM3770_Svelte/blob/master/svelte_practice_project/src/routes/animations/animateDirective.svelte)
+
+### OAuth 
+#### The OAuth will be visible as soon as you go to my page, and will require you to authenticate in order to view the tutorial. The code will be visible in the parent component here: [Parent Component](https://github.com/Andyrooooo/DGM3770_Svelte/blob/master/svelte_practice_project/src/routes/%2Bpage.svelte)
