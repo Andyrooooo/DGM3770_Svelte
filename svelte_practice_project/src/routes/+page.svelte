@@ -84,9 +84,10 @@
 					<!--------------------------------------------- OAUTH MENU ---------------------------------------------------------->
 					{#if authMenu}
 						<div class="absolute ring-1 ring-btn-border w-52 right-4 top-16 px-4 py-2 rounded-md avatarMenu">
-							<p class="text-btn-border text-right w-full">{$page.data.session.user.email}</p>
-							<div class="w-full">
-								<button on:click={signOutAuth} class="float-right text-slate-600 font-bold logout">Sign out</button>
+							<p class="text-black w-full">{$page.data.session.user.name}</p>
+							<p class="text-btn-border w-full avatarEmail pb-2">{$page.data.session.user.email}</p>
+							<div class="flex justify-center">
+								<button on:click={signOutAuth} class="text-slate-600 font-bold logout pt-1">Sign out</button>
 							</div>
 						</div>
 					{/if}
@@ -104,8 +105,9 @@
 					<div class="form my-0 mx-auto">
 						<!-- these are custom events that check the login and when the signup form is clicked in the login form -->
 						<!-- <LoginForm on:checkLogin={checkTheLogin}  on:bringUpSignup={openSignup}/> -->
+						<h1 class="text-center mt-4 text-btn-border bg-white p-4 rounded-md">Andrew Kester's DGM 3770 Svelte Tutorial</h1>
 
-						<div class="bg-white p-4 text-black rounded-md px-4 pt-4 pb-8 mt-14">
+						<div class="bg-white p-4 text-black rounded-md px-4 pt-4 pb-8 mt-6">
 							<h1 class="pb-1.5 mb-4 text-center uppercase signInLabel">Sign In</h1>
 
 							<div class="flex justify-center mb-4">
@@ -223,6 +225,9 @@
 
 
 <style>
+	.avatarEmail {
+		border-bottom: 1px solid rgb(179, 179, 179);
+	}
 	.avatarMenu {
 		background: rgb(222, 222, 239);
 	}
