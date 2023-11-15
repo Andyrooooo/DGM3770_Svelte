@@ -40,21 +40,12 @@
 	alertModal.set(true)
 	let authMenu = false
 
+	/* let loggedIn = $page.data.session?.user */
 
 	// this function will close the modal that gives messages to the user
 	function closeModal() {
         alertModal.set(false)
     }
-
-	// this function will sign the user in using the github auth
-	function signInAuth() {
-		signIn('github')
-	}
-
-	// this function will sign the user out using the github auth
-	function signOutAuth() {
-		signOut()
-	}
 
 	// this function will toggle the avatar menu
 	function toggleAuthMenu() {
@@ -65,7 +56,6 @@
 
 
 <div class:loginModalBackground={showLogin}>
-	<div class:signupModalBackground={showSignup}>
 
 		<div class="introductionPage flex flex-col">
 
@@ -87,7 +77,7 @@
 							<p class="text-black w-full">{$page.data.session.user.name}</p>
 							<p class="text-btn-border w-full avatarEmail pb-2">{$page.data.session.user.email}</p>
 							<div class="flex justify-center">
-								<button on:click={signOutAuth} class="text-slate-600 font-bold logout pt-1">Sign out</button>
+								<button on:click={() => signOut()} class="text-slate-600 font-bold logout pt-1">Sign out</button>
 							</div>
 						</div>
 					{/if}
@@ -98,13 +88,9 @@
 			<!-- if the user is not signed in then the login form will show -->
 			{#if !$page.data.session?.user}
 				<div class:loginModal={showLogin}>
-					<!-- <div class="cancelButtonContainer">
-						<button on:click={() => showLogin = false} class="cancel">X</button>
-					</div> -->
 			
 					<div class="form my-0 mx-auto">
 						<!-- these are custom events that check the login and when the signup form is clicked in the login form -->
-						<!-- <LoginForm on:checkLogin={checkTheLogin}  on:bringUpSignup={openSignup}/> -->
 						<h1 class="text-center mt-4 text-btn-border bg-white p-4 rounded-md">Andrew Kester's DGM 3770 Svelte Tutorial</h1>
 
 						<div class="bg-white p-4 text-black rounded-md px-4 pt-4 pb-8 mt-6">
@@ -114,26 +100,12 @@
 								<i class="fa-brands fa-github text-9xl githubLogo"></i>
 							</div>
 
-							<p class="text-center">Sign in with <button class="py-2 githubBTN font-bold" on:click={signInAuth}> GitHub</button> </p>
+							<p class="text-center">Sign in with <button class="py-2 githubBTN font-bold" on:click={() => signIn('github')}> GitHub</button> </p>
 						</div>
 					</div>
 				</div>
 			{/if}
 
-			
-    
-
-			<!-- {#if showSignup}
-				<div class:signupModal={showSignup}>
-					 <div class="cancelButtonContainer">
-						<button on:click={() => showSignup = false} class="cancel">X</button>
-					</div> 
-			
-					<div class="">
-						<SignupForm on:personAdded={addingNewPerson} />
-					</div>
-				</div>
-			{/if} -->
 
 			<!-- if the user is signed in then the introduction page will show -->
 			{#if $page.data.session?.user}
@@ -219,7 +191,6 @@
 				<h1 class="footer text-center py-2 px-0 w-full text-slate-600">Andrew Kester</h1>
 			</div>
 		{/if}
-	</div>
 </div>
 
 
@@ -295,10 +266,10 @@
 		z-index: 1;
 		position: relative;
 	}
-	.signupModalBackground {
+	/* .signupModalBackground {
 		z-index: 1;
 		position: relative;
-	}
+	} */
 	.form {
 		width: 400px;
 	}
@@ -319,6 +290,8 @@
 </style>
 
 
+
+<!-------------------------------------------------------------- OLD CODE GRAVEYARD ------------------------------------------------------------>
 	<!-- {#if showIntroduction}
 			<Introduction />
 		{:else if showReactivity}
@@ -474,3 +447,31 @@
 	} */
 </styles>
 -->
+
+
+<!-- <div class="cancelButtonContainer">
+						<button on:click={() => showLogin = false} class="cancel">X</button>
+					</div> -->
+
+
+
+								
+    
+
+			<!-- {#if showSignup}
+				<div class:signupModal={showSignup}>
+					 <div class="cancelButtonContainer">
+						<button on:click={() => showSignup = false} class="cancel">X</button>
+					</div> 
+			
+					<div class="">
+						<SignupForm on:personAdded={addingNewPerson} />
+					</div>
+				</div>
+			{/if} -->
+
+
+<!-- 			<div class:signupModalBackground={showSignup}></div> -->
+
+
+						<!-- <LoginForm on:checkLogin={checkTheLogin}  on:bringUpSignup={openSignup}/> -->

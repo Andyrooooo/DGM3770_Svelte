@@ -12,3 +12,4 @@
         <button class="signInBTN my-10 py-2 px-6 rounded-md" on:click={() => signIn('github')}>Sign in</button>
     </div>
 {/if} -->
+<h1>Hello</h1>
