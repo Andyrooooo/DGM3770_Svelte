@@ -75,8 +75,6 @@
     {/if}
 </div>
 
-<p class="text-black">We have to add in more details like the examples from class, we also have to update the readME file</p>
-
 
 <style>
 .tweenTitle {border-bottom: 1px solid rgb(193, 193, 193);}

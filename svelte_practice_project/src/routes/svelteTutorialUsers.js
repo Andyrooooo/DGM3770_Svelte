@@ -17,5 +17,9 @@ export const alertModal = writable(false)
 
 export const alertMessage = writable('')
 
+export const alertSecondMessage = writable('')
+
+// export const modalState = writable({ visible: false })
+
 
 /* We need to come back later to change the Users() to localStorage */

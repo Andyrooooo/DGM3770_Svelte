@@ -14,7 +14,7 @@
 	<h1>Hello {name.toUpperCase()} {lastName.toLowerCase()}</h1>
 
 	<label class="zeusLable">This is a picture of my doggo, Zeus</label>
-	<img {src} alt="A picture of my dog" class="picture" />
+	<img {src} alt="My dog zeus who is a dalmatian" class="picture" />
 
 	<p>This is text from the first component</p>
 	<Secondpage />
