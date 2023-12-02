@@ -23,4 +23,8 @@
 
 ### OAuth 
 #### The OAuth will be visible as soon as you go to my page, and will require you to authenticate in order to view the tutorial. The code will be visible in the parent component here: [Parent Component](https://github.com/Andyrooooo/DGM3770_Svelte/blob/master/svelte_practice_project/src/routes/%2Bpage.svelte). You can also view the auth file where the local environment variable points to but is empty. [auth svelte file](https://github.com/Andyrooooo/DGM3770_Svelte/blob/master/svelte_practice_project/src/routes/auth/%2Bpage.svelte).
-The hooks file will be located here: [hooks.server.ts](https://github.com/Andyrooooo/DGM3770_Svelte/blob/master/svelte_practice_project/src/hooks.server.ts).
+
+#### The hooks file will be located here: [hooks.server.ts](https://github.com/Andyrooooo/DGM3770_Svelte/blob/master/svelte_practice_project/src/hooks.server.ts).
+
+#### Master/Detail Route
+#### For my master/detail route I have utilized sveltekit's routing, loading, and rendering methods to take array data from a JS file and load it into another svelte file without hard coded links. The root of the page will show 25 unique but similar svelte terminology pages to help users understand svelte a little better. The link to the root file will be located here []()
