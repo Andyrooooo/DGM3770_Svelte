@@ -38,22 +38,24 @@
             <LogoutModal />
         {/if}
 
-        <h2 class="mx-4 mt-4 mb-2 text-center">Welcome to Svelte Terms!</h2>
+        {#if $page.data.session?.user}
+            <h2 class="mx-4 mt-4 mb-2 text-center">Welcome to Svelte Terms!</h2>
 
-        <div class="m-4 ring-btn-border ring-2 rounded-md px-4 pt-4">
-            <p>Unsure about some of the concepts within the tutorial? No worries we have a list here of some of the different parts of Svelte and we'll help you get to a place that makes sense. Take a look below and see if any of these are what you need!</p>
-            <div class="flex justify-center"><i class="fa-solid fa-chevron-down text-lg pb-2"></i></div>
-        </div>
+            <div class="m-4 ring-btn-border ring-2 rounded-md px-4 pt-4">
+                <p>Unsure about some of the concepts within the tutorial? No worries we have a list here of some of the different parts of Svelte and we'll help you get to a place that makes sense. Take a look below and see if any of these are what you need!</p>
+                <div class="flex justify-center"><i class="fa-solid fa-chevron-down text-lg pb-2"></i></div>
+            </div>
 
-        <div class="mt-0 mb-4 flex flex-wrap justify-around">
-            {#each data.summaries as { term, title }}
-                <!-- <li class="hover:text-btn-border mx-4 hover:border-l-4 hover:pl-2 mb-2 basis-5/12"> -->
-                <a href="/terms/{term}" class="mx-4 mb-4 basis-5/12 ring-btn-border ring-4 hover:bg-btn-border rounded-md p-2 text-center">
-                    <i class="fa-solid fa-book mr-2"></i>
-                    {title}
-                </a>
-            {/each}
-        </div>
+            <div class="mt-0 mb-4 flex flex-wrap justify-around">
+                {#each data.summaries as { term, title }}
+                    <!-- <li class="hover:text-btn-border mx-4 hover:border-l-4 hover:pl-2 mb-2 basis-5/12"> -->
+                    <a href="/terms/{term}" class="mx-4 mb-4 basis-5/12 ring-btn-border ring-4 hover:bg-btn-border rounded-md p-2 text-center">
+                        <i class="fa-solid fa-book mr-2"></i>
+                        {title}
+                    </a>
+                {/each}
+            </div>
+        {/if}
 
     
     </div>
