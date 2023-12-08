@@ -6,7 +6,7 @@
 	}
 </script>
 
-<button on:click={increment} class="button">Click me</button>
+<button class="p-4 bg-black text-white rounded-lg mb-2" on:click={increment}>Click me</button>
 
 <p>
 	Clicked {count}
@@ -21,12 +21,4 @@
 	<p>{count} is between 5 and 10</p>
 {/if}
 
-<style>
-	.button {
-		background: black;
-		width: 150px;
-		border-radius: 10px;
-		color: white;
-		font-weight: 700;
-	}
-</style>
+

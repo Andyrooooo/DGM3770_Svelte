@@ -29,7 +29,6 @@
 </script>
 
 <div class="dom">
-    <h2>DOM Events</h2>
 
     <div class="boxOne" on:pointermove={handleMove}>
         <p>The pointer is at {m.x} x {m.y}</p>
@@ -50,8 +49,6 @@
         justify-content: space-between;
         display: flex;
         flex-wrap: wrap;
-        background-color: white;
-        padding: 1rem;
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
     }

@@ -6,10 +6,7 @@
     
 
 
-<div class="bg-black p-4 rounded-bl-md rounded-br-md">
-    <h1 class="bindingTitle">Store Bindings</h1>
-
-    <p class="mb-4">In this example, we can add and delete "users" from our user list using <a class="important">Custom stores</a></p>
+<div class="rounded-bl-md rounded-br-md">
 
     <label>Please enter your name</label>
     <input class="w-full p-2 text-black" bind:value={$name} />
@@ -33,12 +30,6 @@
 
 
 <style>
-    .bindingTitle {
-        border-bottom: 1px solid rgb(126, 126, 126);
-    }
-    .important {
-        color: rgb(104, 104, 226);
-    }
     .submitButton {
         border: 2px solid rgb(104, 104, 226);
         color:rgb(104, 104, 226);

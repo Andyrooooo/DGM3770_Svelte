@@ -41,7 +41,6 @@
     input {
         border: 2px solid rgb(112, 112, 112);
         width: 32%;
-        background: rgb(196, 196, 196);
     }
     button {
         width: 20%;

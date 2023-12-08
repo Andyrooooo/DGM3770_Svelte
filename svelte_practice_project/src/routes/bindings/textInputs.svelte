@@ -6,7 +6,6 @@
 </script>
 
 <div class="tInputs">
-    <h1>Text Inputs</h1>
     <p>Enter Your Information</p>
     <input bind:value={firstName} placeholder="First Name" />
     <input bind:value={lastName} placeholder="Last Name" />
@@ -26,19 +25,11 @@
         text-align: center;
     }
     .tInputs {
-        background: white;
-        padding: 1rem;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
-    }
-    h1 {
-        color: black;
-        flex-basis: 100%;
-        font-size: 1.6rem;
-        margin-bottom: 1rem;
     }
     input {
         border: 1px solid black;

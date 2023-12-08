@@ -20,6 +20,8 @@
 
 
 <div class="mx-4 mt-4 mb-8 p-4 shadow-md rounded-md bg-white">
+    <h1 class="text-2xl mb-4 text-btn-border">Transitions</h1>
+
     <h1 class="text-black mb-4 text-center">These modules are example modules using many of the functionalities of Transitions</h1>
     <InOut />
     <CSSTransitions />

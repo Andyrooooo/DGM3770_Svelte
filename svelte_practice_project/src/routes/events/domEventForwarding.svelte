@@ -19,7 +19,6 @@
 </script>
 
 <div class="domE">
-    <h2>DOM Event Forwarding</h2>
     <p class="{message}">You clicked on {message}</p>
     <DomEBTN 
     on:click={handleRed} 
@@ -31,17 +30,12 @@
 
 <style>
     .domE {
-        background: rgb(58, 58, 58);
-        padding: 1rem;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
         border-bottom-left-radius: 10px;
         border-bottom-right-radius: 10px;
         margin-bottom: 2rem;
-    }
-    .domE h2 {
-        flex-basis: 100%;
     }
     p {
         flex-basis: 100%;

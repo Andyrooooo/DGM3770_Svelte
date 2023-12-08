@@ -6,7 +6,6 @@
 </script>
 
 <div class="inline">
-    <h2>Inline Handlers</h2>
     <div class="pointer" on:pointermove={(e) => {m = { x: Math.trunc(e.clientX), y: Math.trunc(e.clientY)}}}>
         The pointer is at {m.x} x {m.y} inside the box
     </div>
@@ -16,7 +15,6 @@
 <style>
     .pointer {
 		flex-basis: 49%;
-		padding: 2rem;
         background: grey;
         text-align: center;
         border-radius: 10px;
@@ -25,12 +23,7 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
-        background-color: rgb(211, 211, 211);
         padding: 1rem;
-    }
-    .inline h2 {
-        color: black;
-        flex-basis: 100%;
     }
     .hover {
         flex-basis: 49%;

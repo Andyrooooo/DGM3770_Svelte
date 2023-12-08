@@ -61,7 +61,7 @@
 </script>
 
 
-<div class="hover:shadow-lg bg-slate-200 text-black p-2 rounded-lg mt-4 fly">
+<div class="shadow-md bg-slate-200 text-black p-2 rounded-lg mt-4 fly">
 
     <h1 class="transitionsTitle text-btn-border">Transition 2: Flying Carousel</h1>
 

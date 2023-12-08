@@ -6,7 +6,6 @@
 </script>
 
 <div class="slctMultiple">
-    <h1>Select Multiple</h1>
 
     <h2>Size</h2>
 
@@ -39,7 +38,7 @@
     {:else if flavours.length > scoops}
         <p class="warning">Can't order more flavours than scoops!</p>
     {:else}
-        <ul>
+        <ul class="bg-white shadow-md">
             You ordered:
             <li>{scoops} {scoops === 1 ? 'scoop' : 'scoops'}</li>
             <li>{formatter.format(flavours)}</li>
@@ -49,16 +48,9 @@
 
 <style>
     .slctMultiple {
-        background: rgb(66, 66, 66);
-        padding: 1rem;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
-    }
-    h1 {
-        flex-basis: 100%;
-        font-size: 1.6rem;
-        margin-bottom: 1rem;
     }
     h2 {
         flex-basis: 100%;
@@ -80,7 +72,6 @@
     ul {
         flex-basis: 100%;
         margin-top: 1rem;
-        background: rgb(175, 175, 175);
         padding: 5px;
         border-radius: 5px;
     }

@@ -11,22 +11,15 @@
 </script>
 
 <div class="component">
-<h2>Component Events</h2>
     <Inner on:message={handleMessage} on:age={showAge}/>
 </div>
 
 
 <style>
     .component {
-        background: rgb(123, 123, 123);
-        padding: 1rem;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
-    }
-    .component h2 {
-        color: black;
-        flex-basis: 100%;
     }
     
 </style>

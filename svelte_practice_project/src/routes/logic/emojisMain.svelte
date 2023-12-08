@@ -14,7 +14,7 @@
 	}
 </script>
 
-<button on:click={handleClick} class="button"> Remove first thing </button>
+<button on:click={handleClick} class="button mb-2"> Remove first thing </button>
 
 {#each things as thing (thing.id)}
 	<Emojis name={thing.name} />

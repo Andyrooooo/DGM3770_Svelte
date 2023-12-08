@@ -36,12 +36,11 @@
 </script>
 
 <div class="slctBindings">
-    <h1>Select Bindings</h1>
     
     <h2>Security Questions</h2>
 
     <form on:submit|preventDefault={handleSubmit}>
-        <select bind:value={selected} >
+        <select bind:value={selected} class="text-black">
             <option></option>
             {#each questions as question}
                 <option value={question}>{question.text}</option>
@@ -50,28 +49,20 @@
 
         <input bind:value={answer} />
 
-        <button disabled={!answer} type="submit">
+        <button disabled={!answer} type="submit" class="bg-gray-400">
             Submit
         </button>
 
     </form>
-    <p class="reminder">Remember this little questionnaire uses the cool way to use <a class="reference">e.preventDefault</a> with <a class="reference">on:submit|preventDefault=(handlerfunction)</a> for reference</p>
+    <p class="reminder bg-white shadow-md">Remember this little questionnaire uses the cool way to use <a class="reference">e.preventDefault</a> with <a class="reference">on:submit|preventDefault=(handlerfunction)</a> for reference</p>
 
 </div>
 
 <style>
     .slctBindings {
-        background: rgb(159, 159, 159);
-        padding: 1rem;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
-    }
-    h1 {
-        color: black;
-        flex-basis: 100%;
-        font-size: 1.6rem;
-        margin-bottom: 1rem;
     }
     h2 {
         color: black;
@@ -89,14 +80,12 @@
         color: black;
     }
      button {
-        background: rgb(93, 146, 76);
         padding: .5rem 1rem;
         border-radius: 2px;
         margin: 1rem 37.5%;
         width: 25%;
     }
     .reminder {
-        background: red;
         flex-basis: 100%;
         padding: 10px;
         border-radius: 5px;

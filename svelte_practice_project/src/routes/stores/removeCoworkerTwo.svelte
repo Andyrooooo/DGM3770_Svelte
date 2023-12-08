@@ -28,7 +28,6 @@
     .removeCoworker {
         flex-basis: 78%;
         border: 2px solid rgb(112, 112, 112);
-        background: rgb(196, 196, 196);
     }
     .removeBTN {
         border: 2px solid rgb(255, 106, 106);

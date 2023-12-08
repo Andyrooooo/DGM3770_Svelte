@@ -9,7 +9,6 @@
 </script>
 
 <div class="chckInputs">
-    <h1>Checkbox Inputs</h1>
     
     <label>
         <input type="checkbox" bind:checked={yes} />
@@ -35,18 +34,11 @@
 
 <style>
     .chckInputs {
-        background: rgb(207, 207, 207);
-        padding: 1rem;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
     }
-    h1 {
-        color: black;
-        flex-basis: 100%;
-        font-size: 1.6rem;
-        margin-bottom: 1rem;
-    }
+
     button {
         background: rgb(93, 93, 93);
         padding: .5rem 1rem;
@@ -68,6 +60,7 @@
         text-align: center;
         padding: 5px;
         border-radius: 40px;
+        color: white;
     }
     .message:empty {
         display: none;

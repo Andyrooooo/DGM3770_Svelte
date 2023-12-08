@@ -29,14 +29,11 @@ afterUpdate(() => {
 
 <!-- 346px height -->
 
-<div class="beforeAfter text-black p-4">
-    <h1 class="beforeAfterTitle text-black">BeforeUpdate and afterUpdate</h1>
-
-    <p class="mb-8">In here we use <a class="important">beforeUpdate</a> and <a class="important">afterUpdate</a> to show us how many todos we have before and after we add a new todo</p>
+<div class="bg-white text-black p-4">
 
     <form on:submit={addNewTodo}>
         <label for="name">Add Todo</label>
-        <input type="text" class="box-border w-full py-4 px-2 rounded-md mt-.5 mb-4 mx-0" name="name" bind:value={name}/>
+        <input type="text" class="bg-slate-400 box-border w-full py-4 px-2 rounded-md mt-.5 mb-4 mx-0" name="name" bind:value={name}/>
 
         <!--         box-sizing: border-box;
         width: 100%;
@@ -51,7 +48,7 @@ afterUpdate(() => {
 
     <label>Your todo list</label>
 
-    <div class="todoCount flex justify-around rounded-tr-md rounded-tl-md py-1 px-0">
+    <div class="bg-slate-400 flex justify-around rounded-tr-md rounded-tl-md py-1 px-0">
         <p class="text-white">{after}</p>
         <p class="text-white">{before}</p>
     </div>
@@ -67,12 +64,6 @@ afterUpdate(() => {
 
 
 <style>
-    .beforeAfter {
-        background: rgb(181, 181, 181);
-    }
-    .beforeAfterTitle {
-        border-bottom: 1px solid rgb(154, 154, 154);
-    }
     
     .addBTN {
         border: 2px solid rgb(122, 122, 226);
@@ -82,12 +73,6 @@ afterUpdate(() => {
     }
     .addBTN:hover {
         background: rgb(122, 122, 226);
-        color: rgb(79, 79, 79);
-    }
-    .todoCount {
-        background-color: rgb(114, 114, 114);
-    }
-    .important {
-        color: rgb(122, 122, 226);
+        color: white;
     }
 </style>

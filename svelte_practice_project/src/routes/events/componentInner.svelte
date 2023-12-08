@@ -30,5 +30,6 @@
         background: black;
         padding: 1rem;
         border-radius: 5px;
+		color: white;
     }
 </style>

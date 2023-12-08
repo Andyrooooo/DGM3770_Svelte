@@ -39,7 +39,7 @@
 </script>
 
 
-<div class="hover:shadow-lg bg-slate-200 text-black p-2 rounded-lg">
+<div class="shadow-md bg-slate-200 text-black p-2 rounded-lg">
 
     <h1 class="tweenTitle text-btn-border">Tweens</h1>
     <p>In this example we use <a class="text-btn-border">Tween</a> to show us the progress bar when the API is loading for our random joke.</p>

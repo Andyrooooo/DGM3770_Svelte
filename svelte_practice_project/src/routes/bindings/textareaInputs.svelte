@@ -13,7 +13,6 @@
 </script>
 
 <div class="taInputs">
-    <h1>Textarea Inputs</h1>
 
         <label>Input word</label>
         <textarea bind:value={word}></textarea>
@@ -21,15 +20,13 @@
         
         <label class="outputLabel">Output Uppercase Word</label>
         {#if newWord}
-            <div class="output">{upperWord}</div>
+            <div class="output text-black">{upperWord}</div>
         {/if}
 
 </div>
 
 <style>
     .taInputs {
-        background: rgb(0, 0, 0);
-        padding: 1rem;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
@@ -60,7 +57,6 @@
         margin-top: 1rem;
     }
     .output {
-        color: white;
         flex-basis: 100%;
     }
     button {

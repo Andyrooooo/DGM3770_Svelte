@@ -10,25 +10,9 @@
 </script>
     
 
-<div class="derived text-black p-4">
-    <h1 class="derivedTitle">Derived Stores</h1>
-
-    <p class="description">In this example, we use <a class="important mb-4">Derived stores</a> to display the time our page has been open</p>
+<div class="text-black">
     
     <h1>The time is {formatter.format($time)}</h1>
 
     <p>This page has been open for {$elapsed} {$elapsed === 1 ? 'second' : 'seconds'}</p>
 </div>
-
-
-<style>
-    .derived {
-        background: rgb(92, 92, 92);
-    }
-    .derivedTitle {
-        border-bottom: 1px solid rgb(126, 126, 126);
-    }
-    .important {
-        color: rgb(104, 104, 226);
-    }
-</style>

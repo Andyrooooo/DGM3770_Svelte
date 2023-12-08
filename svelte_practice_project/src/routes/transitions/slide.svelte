@@ -11,7 +11,7 @@
 </script>
 
 
-<div class="hover:shadow-lg bg-slate-200 text-black p-2 rounded-lg mt-4">
+<div class="shadow-md bg-slate-200 text-black p-2 rounded-lg mt-4">
 
     <h1 class="transitionsTitle text-btn-border">Transition 1: Sliding Dropdown menu</h1>
 

@@ -5,7 +5,6 @@
 </script>
 
 <div class="nInputs">
-    <h1>Numeric Inputs</h1>
     
     <label>
         <label>Rate Overall Satisfaction</label>
@@ -44,8 +43,6 @@
 
 <style>
     .nInputs {
-        background: rgb(231, 231, 231);
-        padding: 1rem;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
@@ -53,12 +50,6 @@
     h3 {
         color: black;
         margin-right: 5px;
-    }
-    h1 {
-        color: black;
-        flex-basis: 100%;
-        font-size: 1.6rem;
-        margin-bottom: 1rem;
     }
     label {
         flex-basis: 100%;

@@ -4,7 +4,7 @@
 </script>
 
 
-<div class="hover:shadow-lg bg-slate-200 text-black p-2 rounded-lg">
+<div class="shadow-md bg-slate-200 text-black p-2 rounded-lg">
     <h1 class="inOutTitle text-btn-border">In and Out</h1>
 
     <label>
