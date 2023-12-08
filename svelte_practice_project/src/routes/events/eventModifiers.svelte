@@ -3,9 +3,10 @@
 </script>
 
 <div class="modifier">
-    <button on:click|once={() => alert('clicked')}>
-        Click me, I only work once
-    </button>
+        <button on:click|once={() => alert('clicked')} class="p-2 border-2 border-btn-border text-btn-border hover:bg-btn-border hover:text-white rounded-lg mb-4">
+            Click me, I only work once
+        </button>
+   
 
     <p>Other Event Modifiers</p>
     <ul>
@@ -27,18 +28,6 @@
 
 
 <style>
-    .modifier p {
-        margin-top: 1rem;
-    }
-    .modifier button {
-        background: black;
-        width: 300px;
-        padding: .5rem;
-        border-radius: 5px;
-        color: white;
-        flex-basis: 100%;
-        margin-top: 1rem;
-    }
     .modifier a {
         background: rgb(255, 255, 255);
         padding: 0 5px;

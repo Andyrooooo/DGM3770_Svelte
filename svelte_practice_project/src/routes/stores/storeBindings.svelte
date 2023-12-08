@@ -9,7 +9,7 @@
 <div class="rounded-bl-md rounded-br-md">
 
     <label>Please enter your name</label>
-    <input class="w-full p-2 text-black" bind:value={$name} />
+    <input class="w-full p-2 border-2 border-btn-border text-btn-border bg-inherit rounded-lg mt-2" bind:value={$name} />
     <div class="flex justify-center">
         <button class="submitButton py-2 px-4 mt-2 rounded-lg" on:click={() => modal = true}>Submit</button>
     </div>

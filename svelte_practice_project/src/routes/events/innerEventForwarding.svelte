@@ -10,15 +10,6 @@
 	}
 </script>
 
-<button on:click={sayHello}>
+<button class=" p-2 border-2 border-btn-border text-btn-border hover:bg-btn-border hover:text-white rounded-lg" on:click={sayHello}>
 	Click for greeting
 </button>
-
-<style>
-    button {
-        background: black;
-        padding: 1rem;
-        border-radius: 5px;
-    }
-    
-</style>

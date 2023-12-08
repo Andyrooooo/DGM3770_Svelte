@@ -19,7 +19,7 @@
 </script>
 
 <div class="domE">
-    <p class="{message}">You clicked on {message}</p>
+    <p class="{message} basis-full border-2 border-btn-border text-center rounded-md py-8 font-bold text-2xl">You clicked on {message}</p>
     <DomEBTN 
     on:click={handleRed} 
     on:blueColor={handleBlue}
@@ -36,16 +36,6 @@
         border-bottom-left-radius: 10px;
         border-bottom-right-radius: 10px;
         margin-bottom: 2rem;
-    }
-    p {
-        flex-basis: 100%;
-        text-align: center;
-        background-color: white;
-        color: black;
-        margin-top: 1rem;
-        padding: 1rem;
-        font-size: 1.4rem;
-        font-weight: bold;
     }
     .red {
         color: red;

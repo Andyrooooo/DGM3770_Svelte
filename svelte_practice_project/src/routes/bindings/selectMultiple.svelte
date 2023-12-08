@@ -19,7 +19,7 @@
 
     <h2 class="flvrs">Flavours</h2><p>Please use <a>ctrl</a> or <a>ctrl</a> to select multiple flavors</p>
 
-    <select multiple bind:value={flavours} class="flavors">
+    <select multiple bind:value={flavours} class="flavors rounded-md border-2 border-btn-border">
         {#each ['cookies and cream', 'mint choc chip', 'raspberry ripple', 'vanilla', 'cherry'] as flavour}
             <option value={flavour}>{flavour}</option>
         {/each}

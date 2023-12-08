@@ -33,7 +33,7 @@ afterUpdate(() => {
 
     <form on:submit={addNewTodo}>
         <label for="name">Add Todo</label>
-        <input type="text" class="bg-slate-400 box-border w-full py-4 px-2 rounded-md mt-.5 mb-4 mx-0" name="name" bind:value={name}/>
+        <input type="text" class="p-2 border-2 border-btn-border text-btn-border w-full rounded-lg mb-4 outline-none" name="name" bind:value={name} placeholder="Enter todo..."/>
 
         <!--         box-sizing: border-box;
         width: 100%;
@@ -48,12 +48,12 @@ afterUpdate(() => {
 
     <label>Your todo list</label>
 
-    <div class="bg-slate-400 flex justify-around rounded-tr-md rounded-tl-md py-1 px-0">
+    <div class="bg-btn-border flex justify-around rounded-tr-md rounded-tl-md py-1 px-0">
         <p class="text-white">{after}</p>
         <p class="text-white">{before}</p>
     </div>
 
-    <ul class="bg-white p-2">
+    <ul class="bg-slate-100 p-2">
         {#each todos as todo}
         <li class="text-slate-600" >{todo}</li>
         {/each}

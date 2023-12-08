@@ -21,7 +21,7 @@
 <!-- a form to display each coworker and select a specific coworker to be removed -->
 <form class="flex justify-between mb-4" on:submit={removeCoworker}>
 
-    <select bind:value={coworkerToRemove} class="removeCoworker rounded-md p-2">
+    <select bind:value={coworkerToRemove} class="removeCoworker p-2 border-2 border-btn-border text-btn-border rounded-lg bg-inherit">
         <option></option>
         {#each myCoworkers as coworker}
             <option>{coworker.name}</option>
@@ -35,7 +35,6 @@
 <style>
     .removeCoworker {
         flex-basis: 78%;
-        border: 2px solid rgb(112, 112, 112);
     }
     .removeBTN {
         border: 2px solid rgb(255, 148, 148);

@@ -28,63 +28,42 @@
     }
 </script>
 
-<div class="dom">
+<div class="flex justify-between flex-wrap">
 
-    <div class="boxOne" on:pointermove={handleMove}>
+    <div class="boxOne border-2 border-btn-border text-btn-border rounded-lg px-2 py-10" on:pointermove={handleMove}>
         <p>The pointer is at {m.x} x {m.y}</p>
     </div>
     
-    <div class="boxTwo" on:pointermove={handleMoveTwo}>
+    <div class="boxTwo border-2 border-btn-border text-btn-border rounded-lg px-2 py-10" on:pointermove={handleMoveTwo}>
         <p>The pointer is at {n.x} x {n.y}</p>
     </div>
     
-    <button class="boxThree" on:click={disappear}>Don't Click Me</button>
+    <button class="boxThree border-2 border-btn-border text-btn-border rounded-lg px-2 py-10" on:click={disappear}>Don't Click Me</button>
     
-    <button class="boxFour {isGreen}" on:click={changeColor}>Don't click me either</button>
+    <button class="boxFour {isGreen} border-2 border-btn-border text-btn-border rounded-lg px-2 py-10" on:click={changeColor}>Don't click me either</button>
 </div>
 
 
 <style>
-    .dom {
-        justify-content: space-between;
-        display: flex;
-        flex-wrap: wrap;
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
-    }
 	div.boxOne {
 		width: 24%;
-		padding: 1rem;
-        background: rgb(71, 71, 71);
-        border-radius: 10px;
 	}
     div p {
         text-align: center;
     }
     div.boxTwo{
 		width: 24%;
-		padding: 1rem;
-        background: rgb(71, 71, 71);
-        border-radius: 10px;
 	}
     button.boxThree{
 		width: 24%;
-		padding: 1rem;
-        background: rgb(71, 71, 71);
-        border-radius: 10px;
 	}
     button.boxFour {
 		width: 24%;
-		padding: 1rem;
-        border-radius: 10px;
-        color: black;
-        border: 1px solid black;
 	}
     .green {
         background-color: green;
+        color: white;
+        border: none;
     }
-    .dom h2 {
-        color: black;
-        flex-basis: 100%;
-    }
+
 </style>

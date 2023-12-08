@@ -23,8 +23,8 @@
         <button class="vehicleBTN py-2 px-4 rounded-md text-btn-border border-2 border-btn-border hover:bg-btn-border hover:text-white" on:click={addStarWarsVehicles}>Get Random Vehicle</button>
     </div>
 
-    <div class="nameContainer bg-white p-4 mt-4 h-14">
-        <p class="text-center text-black">{randomVehicleName}</p>
+    <div class="nameContainer border-2 border-btn-border p-4 mt-4 h-14 bg-slate-100">
+        <p class="text-center text-btn-border">{randomVehicleName}</p>
     </div>
 
 </div>

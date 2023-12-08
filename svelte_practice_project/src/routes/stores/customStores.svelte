@@ -11,7 +11,7 @@
 
     <p class="userAmount text-center px-2 pt-2 pb-0 rounded-md">There is {$users.length === 0 ? 'no users' : $users.length === 1 ? `${$users.length} user` : `${$users.length} users`} currently in the system</p>
 
-    <input class="p-2 w-full mt-4 bg-white" type="text" bind:value={userName} placeholder="Enter your name" />
+    <input class="p-2 border-2 border-btn-border text-btn-border bg-inherit w-full mt-2 rounded-lg" type="text" bind:value={userName} placeholder="Enter your name..." />
     
     <div class="flex justify-center">
     <button class="addUser py-2 px-0 rounded-lg mt-2" on:click={() => {

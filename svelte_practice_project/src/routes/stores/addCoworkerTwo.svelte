@@ -28,18 +28,17 @@
 </script>
 
 <form class="flex justify-between mb-4 flex-wrap" on:submit={addCoworker}>
-    <input class="p-2 rounded-md mb-2" type="text" placeholder="name" bind:value={newName}>
-    <input class="p-2 rounded-md mb-2" type="number" placeholder="age" bind:value={newAge}>
-    <input class="p-2 rounded-md mb-2" type="text" placeholder="position" bind:value={newPosition}>
+    <input class="p-2 border-2 border-btn-border text-btn-border bg-inherit rounded-lg" type="text" placeholder="name" bind:value={newName}>
+    <input class="p-2 border-2 border-btn-border text-btn-border bg-inherit rounded-lg" type="number" placeholder="age" bind:value={newAge}>
+    <input class="p-2 border-2 border-btn-border text-btn-border bg-inherit rounded-lg" type="text" placeholder="position" bind:value={newPosition}>
     <div class="flex justify-center basis-full">
-        <button class="rounded-lg p-2 hover:text-white" type="submit">Add</button>
+        <button class="rounded-lg p-2 hover:text-white mt-4" type="submit">Add</button>
     </div>
 </form>
 
 
 <style>
     input {
-        border: 2px solid rgb(112, 112, 112);
         width: 32%;
     }
     button {

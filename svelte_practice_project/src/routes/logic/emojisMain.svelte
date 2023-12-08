@@ -14,19 +14,8 @@
 	}
 </script>
 
-<button on:click={handleClick} class="button mb-2"> Remove first thing </button>
+<button on:click={handleClick} class="p-2 border-2 border-btn-border text-btn-border hover:bg-btn-border hover:text-white rounded-lg mb-2"> Remove first thing </button>
 
 {#each things as thing (thing.id)}
 	<Emojis name={thing.name} />
 {/each}
-
-<style>
-	.button {
-		background: black;
-		width: 200px;
-		padding: 1rem 0;
-		border-radius: 10px;
-		color: white;
-		font-weight: 700;
-	}
-</style>

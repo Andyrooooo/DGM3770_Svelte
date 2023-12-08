@@ -7,11 +7,11 @@
 
 <div class="tInputs">
     <p>Enter Your Information</p>
-    <input bind:value={firstName} placeholder="First Name" />
-    <input bind:value={lastName} placeholder="Last Name" />
-    <input bind:value={email} placeholder="Email" />
-    <input bind:value={phoneNumber} placeholder="Phone Number" type="number"/>
-
+    <input bind:value={firstName} placeholder="First Name" class="bg-inherit p-2 border-2 border-btn-border text-btn-border rounded-lg outline-none mb-2"/>
+    <input bind:value={lastName} placeholder="Last Name"  class="bg-inherit p-2 border-2 border-btn-border text-btn-border rounded-lg outline-none mb-2"/>
+    <input bind:value={email} placeholder="Email"  class="bg-inherit p-2 border-2 border-btn-border text-btn-border rounded-lg outline-none mb-2"/>
+    <input bind:value={phoneNumber} placeholder="Phone Number" type="number" class="bg-inherit p-2 border-2 border-btn-border text-btn-border rounded-lg outline-none mb-2"/>
+    
     <p>First Name: {firstName}</p>
     <p>Last Name: {lastName}</p>
     <p>Email: {email}</p>
@@ -20,25 +20,14 @@
 
 <style>
     p {
-        color: black;
         flex-basis: 100%;
-        text-align: center;
     }
     .tInputs {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
     }
     input {
-        border: 1px solid black;
-        color: black;
-        box-sizing: border-box;
         flex-basis: 49%;
-        padding: 5px;
-        margin: 0.25rem 0;
-        border-radius: 5px;
-        background-color: rgb(240, 240, 240);
     }
 </style>

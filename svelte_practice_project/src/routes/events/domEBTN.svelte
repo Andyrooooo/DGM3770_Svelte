@@ -20,19 +20,19 @@
     }
 </script>
 
-<button class="redBTN" on:click>
+<button class="redBTN hover:shadow-lg" on:click>
 	Red
 </button>
 
-<button class="blueBTN" on:click={blueColor}>
+<button class="blueBTN hover:shadow-lg" on:click={blueColor}>
 	blue
 </button>
 
-<button class="yellBTN" on:click={yellowColor}>
+<button class="yellBTN hover:shadow-lg" on:click={yellowColor}>
 	yellow
 </button>
 
-<button class="grnBTN" on:click={greenColor}>
+<button class="grnBTN hover:shadow-lg" on:click={greenColor}>
 	green
 </button>
 

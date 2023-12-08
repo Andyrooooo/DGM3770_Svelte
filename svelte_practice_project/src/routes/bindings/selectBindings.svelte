@@ -40,16 +40,16 @@
     <h2>Security Questions</h2>
 
     <form on:submit|preventDefault={handleSubmit}>
-        <select bind:value={selected} class="text-black">
+        <select bind:value={selected} class="w-full bg-inherit p-2 border-2 border-btn-border text-btn-border rounded-lg outline-none my-2">
             <option></option>
             {#each questions as question}
                 <option value={question}>{question.text}</option>
             {/each}
         </select>
 
-        <input bind:value={answer} />
+        <input bind:value={answer} class="w-full bg-inherit p-2 border-2 border-btn-border text-btn-border rounded-lg outline-none mb-2" placeholder="Input your answer..."/>
 
-        <button disabled={!answer} type="submit" class="bg-gray-400">
+        <button disabled={!answer} type="submit" class="p-2 border-2 border-btn-border text-btn-border hover:bg-btn-border hover:text-white rounded-lg mb-4 mt-2">
             Submit
         </button>
 
@@ -73,16 +73,10 @@
     }
     input, select {
         box-sizing: border-box;
-        margin: .5rem 0;
-        width: 100%;
-        padding: 5px;
-        border-radius: 5px;
-        color: black;
     }
      button {
-        padding: .5rem 1rem;
-        border-radius: 2px;
-        margin: 1rem 37.5%;
+        margin-right: 37.5%;
+        margin-left: 37.5%;
         width: 25%;
     }
     .reminder {

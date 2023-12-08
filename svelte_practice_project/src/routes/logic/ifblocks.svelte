@@ -6,7 +6,7 @@
 	}
 </script>
 
-<button class="p-4 bg-black text-white rounded-lg mb-2" on:click={increment}>Click me</button>
+<button class="p-2 border-2 border-btn-border text-btn-border hover:bg-btn-border hover:text-white rounded-lg mb-2" on:click={increment}>Click me</button>
 
 <p>
 	Clicked {count}

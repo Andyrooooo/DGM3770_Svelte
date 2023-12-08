@@ -48,7 +48,7 @@
 		<div class="titleBreak border-slate-400"></div>
 		<p class="mb-4">In this section we use the <a class="text-btn-border font-bold">await</a> block to generate text as you await an API call to bring in your data</p>
 
-		<button on:click={handleClick} class="p-4 bg-black text-white rounded-lg mb-2">Generate random number</button>
+		<button on:click={handleClick} class="p-2 border-2 border-btn-border text-btn-border hover:bg-btn-border hover:text-white rounded-lg mb-2">Generate random number</button>
 
 		{#await promise}
 			<p>...waiting</p>

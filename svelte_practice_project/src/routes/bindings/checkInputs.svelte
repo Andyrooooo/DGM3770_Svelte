@@ -27,9 +27,9 @@
         </p>
     {/if}
     
-    <button disabled={!yes} on:click={giveMessage}>Subscribe</button>
+    <button disabled={!yes} on:click={giveMessage} class="p-2 border-2 border-btn-border text-btn-border hover:bg-btn-border hover:text-white rounded-lg mt-4">Subscribe</button>
 
-    <p class="message">{message}</p>
+    <p class="message bg-red-500 text-white mt-4 rounded-md p-4 text-center">{message}</p>
 </div>
 
 <style>
@@ -38,17 +38,10 @@
         flex-wrap: wrap;
         justify-content: space-around;
     }
-
-    button {
-        background: rgb(93, 93, 93);
-        padding: .5rem 1rem;
-        border-radius: 2px;
-        margin: 1rem 0;
-    }
     .warning {
         color: red;
     }
-    p, button, label {
+    p, label {
         flex-basis: 100%;
     }
     label {
@@ -56,11 +49,6 @@
     }
     .message {
         flex-basis: 100%;
-        background-color: black;
-        text-align: center;
-        padding: 5px;
-        border-radius: 40px;
-        color: white;
     }
     .message:empty {
         display: none;

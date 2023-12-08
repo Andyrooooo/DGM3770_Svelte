@@ -11,7 +11,7 @@
 
     <p>For this component we use the <a class="text-btn-border">fade</a> transition effect. Below I created a funny little component that will make use of the fade in and fade out. I don't want to give away what it does, so try it out!</p>
 
-    <div class="bg-slate-400 pb-12 pt-14 px-4 my-4 lg:w-8/12 lg:mx-auto">
+    <div class=" pb-12 pt-14 px-4 my-4 lg:w-8/12 lg:mx-auto">
         <p class="text-center my-4 text-btn-border">Choose a button</p>
         <div class="flex justify-center">
             <button on:click={() => openModal = true} class="py-2 px-6 my-3 mr-2 choiceOne rounded-lg text-btn-border">This One</button>

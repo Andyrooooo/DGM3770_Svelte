@@ -25,17 +25,17 @@
     </label>
     
     <div class=surveyOutput>
-        <h3>Overall Satisfaction: </h3>
+        <h3 class="text-btn-border mr-2">Overall Satisfaction: </h3>
         <p class="survey">{a <= 5 ? "Unsatisfied" : (a > 5 && a <= 8 ? "Moderately Satisfied" : "Satisfied")}</p>
     </div>
-
+    
     <div class=surveyOutput>
-        <h3>Customer Service: </h3>
+        <h3 class="text-btn-border mr-2">Customer Service: </h3>
         <p class="survey">{b <= 5 ? "Unsatisfied" : (b > 5 && b <= 8 ? "Moderately Satisfied" : "Satisfied")}</p>
     </div>
 
     <div class=surveyOutput>
-        <h3>Product: </h3>
+        <h3 class="text-btn-border mr-2">Product: </h3>
         <p class="survey">{c <= 5 ? "Unsatisfied" : (c > 5 && c <= 8 ? "Moderately Satisfied" : "Satisfied")}</p>
     </div>
 
@@ -46,10 +46,6 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
-    }
-    h3 {
-        color: black;
-        margin-right: 5px;
     }
     label {
         flex-basis: 100%;

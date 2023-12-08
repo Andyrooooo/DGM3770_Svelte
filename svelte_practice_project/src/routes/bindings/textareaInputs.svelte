@@ -15,8 +15,8 @@
 <div class="taInputs">
 
         <label>Input word</label>
-        <textarea bind:value={word}></textarea>
-        <button on:click={convertToUppercase}>Convert</button>
+        <textarea bind:value={word} class="w-full bg-inherit p-2 border-2 border-btn-border text-btn-border rounded-lg outline-none my-2" placeholder="input your text to convert..."></textarea>
+        <button on:click={convertToUppercase} class="p-2 border-2 border-btn-border text-btn-border hover:bg-btn-border hover:text-white rounded-lg">Convert</button>
         
         <label class="outputLabel">Output Uppercase Word</label>
         {#if newWord}
@@ -34,19 +34,8 @@
         border-bottom-right-radius: 10px;
         margin-bottom: 1rem;
     }
-    h1 {
-        flex-basis: 100%;
-        font-size: 1.6rem;
-        margin-bottom: 2rem;
-    }
 	textarea {
-		resize: none;
-        color: black;
         flex-basis: 100%;
-        margin-bottom: 1rem;
-        padding: 5px;
-        margin-top: .5rem;
-        border-radius: 5px;
 	}
     label {
         flex-basis: 100%;
@@ -59,10 +48,5 @@
     .output {
         flex-basis: 100%;
     }
-    button {
-        width: 150px;
-        background: white;
-        color: black;
-        padding: .5rem;
-    }
+
 </style>
