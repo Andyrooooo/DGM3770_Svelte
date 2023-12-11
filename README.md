@@ -26,5 +26,5 @@
 
 #### The hooks file will be located here: [hooks.server.ts](https://github.com/Andyrooooo/DGM3770_Svelte/blob/master/svelte_practice_project/src/hooks.server.ts).
 
-#### Master/Detail Route
+### Master/Detail Route
 #### For my master/detail route I have utilized sveltekit's routing, loading, and rendering methods to take array data from a JS file and load it into another svelte file without hard coded links. The root of the page will show 25 unique but similar svelte terminology pages to help users understand svelte a little better. The link to the root file will be located here [Master root file](https://github.com/Andyrooooo/DGM3770_Svelte/tree/master/svelte_practice_project/src/routes/terms)
