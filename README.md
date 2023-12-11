@@ -30,3 +30,19 @@
 
 ### Master/Detail Route
 #### For my master/detail route I have utilized sveltekit's routing, loading, and rendering methods to take array data from a JS file and load it into another svelte file without hard coded links. The root of the page will show 25 unique but similar svelte terminology pages to help users understand svelte a little better. The link to the root file will be located here [Master root file](https://github.com/Andyrooooo/DGM3770_Svelte/tree/master/svelte_practice_project/src/routes/terms)
+
+# Final presentation 
+#### 1. For this section you may view the parent component or "home" component. In here is where all of my other components for the Svelte tutorial are nested. These various components don't link to separate pages but are populated by clicking the button with the listed name and displayed in the body of the page. Currently there are 11 separate buttons that will reveal the those sections and many different components create using different svelte methodologies. A link to the parent component will be provided here [Home Page](https://github.com/Andyrooooo/DGM3770_Svelte/blob/master/svelte_practice_project/src/routes/%2Bpage.svelte)
+
+#### 2. For this section we have the master/detail routes to display the 25 different routes from our 'terms' page main component. These terms are terminology for various Svelte methods and functionality. Each route/page will include between 5-9 different enpoints. The link to the main component will be here [Master component](https://github.com/Andyrooooo/DGM3770_Svelte/tree/master/svelte_practice_project/src/routes/terms)
+
+#### 3. In here I will provide a link to my commits [commit history](https://github.com/Andyrooooo/DGM3770_Svelte/commits/master). Currently there are 118 commits made, and some small, some large but consistent throughout.
+
+#### 4. In my Events section, we have five various examples of user events. These will include on:pointermove, on:mouseover, the event modifier "once", event dispatchers, event forwarding, and DOM event forwarding. The link to the main component will be here [Events main component](https://github.com/Andyrooooo/DGM3770_Svelte/blob/master/svelte_practice_project/src/routes/events/%2Bpage.svelte).
+
+#### 5. In the Bindings section, we have a total of 7 components utilizing various kinds of data bindings. This includes binding to text inputs, number inputs, checkboxes, select inputs, text area, and bind groupings. The link to the bindings main component will be here [Bindings main component](https://github.com/Andyrooooo/DGM3770_Svelte/blob/master/svelte_practice_project/src/routes/bindings/%2Bpage.svelte)
+
+#### 6. For our life cycle functions and stores, we will firstly start with life cycle functions. 
+- I will provide you with my "life cycle" section which includes components utilizing onMount, beforeUpdate and afterUpdate, and tick functionalities. The link will be provided here [life cycle main component](https://github.com/Andyrooooo/DGM3770_Svelte/blob/master/svelte_practice_project/src/routes/lifecycle/%2Bpage.svelte).
+- We then also use the onMount lifecycle on the "loginPrompt" component to display the login when the user comes to the sight. This will be located on the home page or parent component here [Home page](https://github.com/Andyrooooo/DGM3770_Svelte/blob/master/svelte_practice_project/src/routes/%2Bpage.svelte)
+- Lastly I have included three writeable stores that are used for our custom modal to add a title, the description and one to display and hide the modal when called. The link will be here to the store [Svelte Stores](https://github.com/Andyrooooo/DGM3770_Svelte/blob/master/svelte_practice_project/src/routes/svelteTutorialUsers.js)
